@@ -1,0 +1,48 @@
+.box-product {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.box-product .box {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.box-product .box .box-image {
+  height: 65%;
+}
+
+.box-product .box h5 {
+  font-size: 4rem !important;
+}
+
+.box-product .left-box {
+  width: 64%;
+}
+
+.box-product .left-box img {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.box-product .right-box {
+  width: 33%;
+}
+
+.box-product .right-box .box {
+  width: 48%;
+}
+
+.box-product .right-box .box .box-image {
+  height: 80%;
+}
+
+.box-product .right-box .laptop-info {
+  display: flex;
+  justify-content: space-between;
+}
+

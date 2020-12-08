@@ -1,0 +1,43 @@
+.box-product {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .box {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        .box-image {
+            height: 65%;
+        }
+        h5 {
+            font-size: 4rem !important;
+        }
+    }
+    .left-box {
+        //border: 1px solid lightgray;
+        width: 64%;
+        img {
+            display: block;
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+    .right-box {
+        //border: 1px solid lightgray;
+        //border-radius: 5px;
+        width: 33%;
+        //font-size: 0.8rem !important;
+        .box {
+            width: 48%;
+            .box-image {
+                height: 80%;
+            }
+        }
+        .laptop-info {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+}
