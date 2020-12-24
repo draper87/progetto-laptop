@@ -24463,16 +24463,16 @@ $(document).ready(function () {
   $("#chassis").change(function () {
     laptopMaterial = $('#chassis').val();
   }); // metto in una variabile il valore scelto dall utente dello slider laptop Noise
-  // var laptopNoise;
-  // $('input[type="range"]').change(function () {
-  //     laptopNoise = $('input[type="range"]').val();
-  //     console.log(laptopNoise);
-  // })
-  // metto in una variabile il valore scelto dall utente dello slider laptop Temperature
+
+  var laptopNoise;
+  $('#laptopNoise').find('input[type="range"]').change(function () {
+    laptopNoise = $('#laptopNoise').find('input[type="range"]').val();
+    console.log(laptopNoise);
+  }); // metto in una variabile il valore scelto dall utente dello slider laptop Temperature
 
   var laptopTemperature;
-  $('input[type="range"]').change(function () {
-    laptopTemperature = $('input[type="range"]').val();
+  $('#laptopTemperature').find('input[type="range"]').change(function () {
+    laptopTemperature = $('#laptopTemperature').find('input[type="range"]').val();
     var laptopTemperatureFahrenheit = Math.ceil(laptopTemperature * (9 / 5) + 32);
     $('#fahrenheit').text(laptopTemperatureFahrenheit + '°F');
     console.log(laptopTemperature);
