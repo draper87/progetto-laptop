@@ -83,7 +83,7 @@ $(document).ready(function () {
     function chiamaLaptops(page) {
 
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/laptops',
+            url: '/api/laptops',
             method: 'GET',
             data: {
                 video_card: videocard,
