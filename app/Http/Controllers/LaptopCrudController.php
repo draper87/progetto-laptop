@@ -54,7 +54,8 @@ class LaptopCrudController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param Laptop $laptop
-     * @return void
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit(Laptop $laptop)
     {
@@ -66,7 +67,7 @@ class LaptopCrudController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param Laptop $laptop
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Laptop $laptop)
     {
@@ -87,11 +88,14 @@ class LaptopCrudController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Laptop $laptop
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
      */
-    public function destroy($id)
+    public function destroy(Laptop $laptop)
     {
-        //
+        $laptop->delete();
+
+        return redirect()->route('index');
     }
 }

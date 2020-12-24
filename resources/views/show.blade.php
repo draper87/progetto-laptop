@@ -33,14 +33,19 @@
         {{--        Contenuto         --}}
         <div class="container">
 
+            <div><a href="{{route('laptop.edit', $laptop)}}">MODIFICA</a></div>
+
             <div class="box-product mb-3">
 
-                <div class="left-box">
+
+                <div class="left-box card">
+
                     @if(isset($laptop->image_path))
                         <img src="{{asset('storage') . '/' . $laptop->image_path}}" alt="laptop">
                     @else
                         <img src="{{asset('storage') . '/' . 'images/laptop.jpg'}}" alt="laptop">
                     @endif
+
                 </div>
                 <div class="right-box">
 
@@ -136,7 +141,7 @@
 
             <div class="box-product mb-3">
 
-                <div id="cpu-info" class="box card pt-5">
+                <div id="cpu-info" class="box card pt-5 lift">
 
                     <div class="text-center box-image">
                         <img src="{{asset('storage') . '/' . 'images/cpu.png'}}" alt="cpu">
@@ -144,11 +149,15 @@
                     <ul class="list-group list-group-flush pt-5 text-center">
                         <li class="list-group-item">{{$laptop->cpu_name}}</li>
                         <li class="list-group-item list-group-item-dark"># Cores: {{$laptop->cpu->cores}}</li>
+                        <li class="list-group-item list-group-item-dark">Passmark Score: {{$laptop->cpu->score}}
+                            <span class="float-right" data-toggle="tooltip" data-placement="top"
+                                  title="Show the score of the CPU based on the Passmark benchmark. The higher the better."><img
+                                    src="{{asset('storage') . '/' . 'images/info.png'}}" alt="info"></span></li>
                     </ul>
 
                 </div>
 
-                <div id="videocard-info" class="box card pt-5">
+                <div id="videocard-info" class="box card pt-5 lift">
 
                     <div class="text-center box-image">
                         <img src="{{asset('storage') . '/' . 'images/gpu.png'}}" alt="cpu">
@@ -158,20 +167,20 @@
                         <li class="list-group-item">{{$laptop->videocard_name}}</li>
                         <li class="list-group-item list-group-item-dark">Passmark Score: {{$laptop->videocard->score}}
                             <span class="float-right" data-toggle="tooltip" data-placement="top"
-                                  title="Show the score of the video card based on the Passmark benchmark. The higher the better."><img
+                                  title="Show the score of the GPU based on the Passmark benchmark. The higher the better."><img
                                     src="{{asset('storage') . '/' . 'images/info.png'}}" alt="info"></span></li>
                     </ul>
 
                 </div>
 
-                <div id="motherboard" class="box card pt-5">
+                <div id="motherboard" class="box card pt-5 lift">
 
                     <div class="text-center box-image">
-                        <img src="{{asset('storage') . '/' . 'images/motherboard.png'}}">
+                        <img src="{{asset('storage') . '/' . 'images/usb-port.png'}}">
                     </div>
                     <ul class="list-group list-group-flush text-center pt-3">
-                        <li class="list-group-item">Motherboard</li>
-                        <li class="list-group-item list-group-item-dark">{{$laptop->motherboard}}</li>
+                        <li class="list-group-item">Connections</li>
+                        <li class="list-group-item list-group-item-dark">{{$laptop->connections}}</li>
                     </ul>
 
                 </div>
@@ -180,7 +189,7 @@
 
             <div class="box-product">
 
-                <div id="max-temperature" class="box card pt-4">
+                <div id="max-temperature" class="box card pt-4 lift">
 
                     <div id="thermometer" class="box-image">
                         <div class="thermo-container">
@@ -197,14 +206,19 @@
 
                     <div class="box-list">
                         <ul class="list-group list-group-flush pt-4 text-center">
-                            <li class="list-group-item">Chassis Max Temperature</li>
+                            <li class="list-group-item">Chassis Max Temperature
+                                <span class="float-right" data-toggle="tooltip" data-placement="top"
+                                      title="Maximum temperature reached by laptop's chassis with CPU/GPU running at high rate clock."><img
+                                        src="{{asset('storage') . '/' . 'images/info.png'}}" alt="info"></span></li>
                             <li class="list-group-item list-group-item-dark font-weight-200">
-                                @if($laptop->max_temp < 41)
+                                @if($laptop->max_noise <= 41 && $laptop->max_noise != 0)
                                     At this temperature the laptop should feel comfortable if lapped on your knee.
-                                @elseif ($laptop->max_temp > 41 || $laptop->max_temp < 50)
+                                @elseif ($laptop->max_temp == 0)
+                                    We don't have such information about this laptop.
+                                @elseif ($laptop->max_temp > 41 && $laptop->max_temp < 50)
                                     Start to feel hot! Long session with CPU running high could result in uncomfortable feeling with the laptop lapped on your knee.
                                 @else
-                                    Burning!! Above this temperature even laptop's keyboard could start to feel uncomfortable when pressed.
+                                    Burning! At this temperature even laptop's keyboard start to feel hot.
                                 @endif
                             </li>
                         </ul>
@@ -212,7 +226,7 @@
 
                 </div>
 
-                <div id="max-noise" class="box card pt-4">
+                <div id="max-noise" class="box card pt-4 lift">
 
                     <div class="box-image text-center box-image">
                         <img src="{{asset('storage') . '/' . 'images/fan.png'}}" alt="cpu">
@@ -237,13 +251,13 @@
                             </li>
                             <li class="list-group-item list-group-item-dark font-weight-200">
                                 @if($laptop->max_noise <= 35 && $laptop->max_noise != 0)
-                                    At this level noise is quite or inaudible at all.
+                                    At this level fan noise is quite inaudible or inaudible at all.
                                 @elseif ($laptop->max_noise == 0)
                                     We don't have such information about this laptop.
-                                @elseif ($laptop->max_noise > 35 || $laptop->max_noise < 50)
-                                    Start to feel something! At this level noise is audible and long session with laptop's fans running high could result in uncomfortable session.
+                                @elseif ($laptop->max_noise > 35 && $laptop->max_noise < 50)
+                                    Start to feel something! At this level noise is audible and long session could result in uncomfortable session.
                                 @else
-                                    Loud!!! Over 50db noise start to be cause of distraction. In case of long session with laptop's fans running high a pair of headphone is mandatory.
+                                    Loud! Over 50db noise start to be cause of distraction. In case of long sessions a pair of headphone is mandatory.
                                 @endif
                             </li>
                         </ul>
@@ -252,7 +266,7 @@
 
                 </div>
 
-                <div id="motherboard-info" class="box card pt-5">
+                <div id="motherboard-info" class="box card pt-5 lift">
 
                     <div class="text-center box-image">
                         <img src="{{asset('storage') . '/' . 'images/ethernet.png'}}" alt="cpu">
@@ -269,7 +283,7 @@
 
             </div>
 
-            <div class="card mt-4 mb-2">
+            <div class="card mt-4 mb-2 lift">
                 <h5 class="card-header">Description</h5>
                 <div class="card-body">
                     <p class="card-text">The {{$laptop->name}} is equipped with a chassis made of {{$laptop->material}}, {{$laptop->ram_memory}}Gb of Ram, a {{$laptop->display_size}}" monitor, and
@@ -290,14 +304,14 @@
     </section>
 
 
-    <section class="bg-light py-10">
+    <section class="bg-light py-4">
         <div class="container">
             <div class="row align-items-center justify-content-center">
             </div>
         </div>
     </section>
 
-    <hr class="m-0"/>
+{{--    <hr class="m-0"/>--}}
 
 
 @endsection

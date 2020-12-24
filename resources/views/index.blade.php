@@ -108,26 +108,10 @@
 
                             <div id="filters" class="mt-5">
 {{--                                <span>Per-key RGB</span>--}}
-{{--                                <span>Chassis temperature</span>--}}
-{{--                                <span>battery runtime</span>--}}
 
                                 <div class="moreSlider">
 
-{{--                                    <div id="laptopNoise">--}}
-{{--                                        <div class="main">--}}
-{{--                                            <label for="panel_size" class="text-center">Laptop Noise (db)</label>--}}
-{{--                                            <input--}}
-{{--                                                type="range"--}}
-{{--                                                name="laptopNoise"--}}
-{{--                                                min="30"--}}
-{{--                                                max="65"--}}
-{{--                                                value="30"--}}
-{{--                                            >--}}
-{{--                                            <span class="rangeslider__tooltip" id ="range-tooltip-noise"></span>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-
-                                    <div id="laptopTemperature">
+                                    <div id="laptopTemperature" class="mt-3">
                                         <div class="main">
 
                                             <label for="panel_size" class="text-center">
@@ -199,34 +183,34 @@
     </section>
 
 
-    <section class="bg-light py-10">
+    <section class="bg-light py-3">
         <div class="container">
             <div class="row align-items-center justify-content-center">
             </div>
         </div>
     </section>
 
-    <hr class="m-0" />
+{{--    <hr class="m-0" />--}}
 @endsection
 
 {{--          Sezione relativa ad Handlebars             --}}
 <script id="entry-template" type="text/x-handlebars-template">
     <div class="laptop col-lg-4 mb-5 mb-lg-5">
-        <a class="card lift h-100" href="{{route('index')}}/@{{id}}" target="_blank" rel="noopener noreferrer"><div class="card-flag card-flag-dark card-flag-top-right">@{{ price }}$</div>
+        <a class="card lift h-100" href="{{route('index')}}/@{{id}}" target="_blank" rel="noopener noreferrer"><div class="card-flag card-flag-green card-flag-top-right">@{{ price }}$</div>
             <div class="laptop-img">
             <img class="card-img-top" src="{{asset('storage')}}/@{{image_path}}" alt="@{{image_path}}">
             </div>
             <div class="card-body">
                 <h3 class="text-primary mb-0">@{{brand}}</h3>
                 <div class="small text-gray-800 font-weight-500">@{{name}}</div>
-                <div class="small text-gray-500">Videocard: @{{videocard_name}}</div>
-                <div class="small text-gray-500">Cpu: @{{cpu_name}}</div>
+                <div class="small text-gray-500">GPU: @{{videocard_name}}</div>
+                <div class="small text-gray-500">CPU: @{{cpu_name}}</div>
                 <div class="small text-gray-500">Display: @{{display_size}}"</div>
                 <div class="small text-gray-500">Ram: @{{ram_memory}}Gb</div>
             </div>
-            <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">
-                <div class="small text-gray-500">View Full Specs</div>
-                <div class="small text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div></div></a>
+<!--            <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">-->
+<!--                <div class="small text-gray-500">View Full Specs</div>-->
+<!--                <div class="small text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div></div></a>-->
     </div>
 </script>
 
