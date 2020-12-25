@@ -42,7 +42,6 @@
 <script src="{{ asset('js/wNumb.min.js') }}" ></script>
 <script src="{{ asset('js/rangeslider.min.js') }}"></script>
 <script src="{{ asset('js/underscore-min.js') }}"></script>
-<script src="{{ asset('js/moreFilters.js') }}"></script>
 <script src="{{ asset('js/moreFiltersB.js') }}"></script>
 <script src="{{ asset('js/show.js') }}"></script>
 

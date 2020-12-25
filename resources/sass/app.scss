@@ -45,6 +45,18 @@
 .laptop-logo {
     height: 32px !important;
 }
+// pointer
+.pointer {
+    cursor: pointer;
+}
+// lift effect per bottoni reset e more filters
+#moreFilters, #reset {
+    transition: transform 0.15s ease-in-out;
+}
+#moreFilters:hover, #reset:hover {
+    transform: translateY(-0.1666666667rem);
+}
+
 
 @charset "UTF-8";
 /*!
@@ -3281,7 +3293,7 @@ textarea.form-control {
 }
 .btn:focus, .btn.focus {
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 97, 242, 0.25);
+    //box-shadow: 0 0 0 0.2rem rgba(0, 97, 242, 0.25);
 }
 .btn.disabled, .btn:disabled {
     opacity: 0.65;
@@ -3721,12 +3733,12 @@ fieldset:disabled a.btn {
     background-color: #009476;
     border-color: #00876b;
 }
-.btn-teal:focus, .btn-teal.focus {
-    color: #fff;
-    background-color: #009476;
-    border-color: #00876b;
-    box-shadow: 0 0 0 0.2rem rgba(38, 196, 164, 0.5);
-}
+//.btn-teal:focus, .btn-teal.focus {
+//    color: #fff;
+//    background-color: #009476;
+//    border-color: #00876b;
+//    box-shadow: 0 0 0 0.2rem rgba(38, 196, 164, 0.5);
+//}
 .btn-teal.disabled, .btn-teal:disabled {
     color: #fff;
     background-color: #00ba94;
@@ -19366,6 +19378,7 @@ body {
 }
 
 .btn-marketing {
+    caret-color: transparent;
     font-size: 0.7rem;
     padding: 0.8rem 1.5rem;
 }
@@ -21036,4 +21049,23 @@ section {
     overflow: hidden;
     clip: rect(0, 900px, 0, 0);
     animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+
+// PARTE MEDIA QUERY PERSONALIZZATE
+// media query per smartphone
+@media (max-width: 576px) {
+    .form-container {
+        display: block;
+        #form-left {
+            display: block;
+            width: 100%;
+            margin-bottom: 2rem !important;
+            .w-50 {
+                width: 100% !important;
+            }
+        }
+        #form-right {
+            width: 100% !important;
+        }
+    }
 }

@@ -1,4 +1,4 @@
-require('./bootstrap');
+// require('./bootstrap');
 const Handlebars = require("handlebars");
 
 
