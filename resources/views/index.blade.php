@@ -145,7 +145,6 @@
 
                             <div id="form-input" class="text-center mt-5">
 
-{{--                                <button class="mr-5 mt-5 btn btn-teal btn-marketing rounded-pill lift lift-sm" id="moreFilters">More Filters</button>--}}
                                 <img src="{{asset('storage') . '/' . 'images/funnel.png'}}" alt="reset" class="mr-4 mt-5 pointer" id="moreFilters">
 
                                 <input class="mt-5 btn btn-teal btn-marketing rounded-pill lift lift-sm" id="bottone" value="Search">

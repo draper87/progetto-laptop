@@ -33,7 +33,7 @@
         {{--        Contenuto         --}}
         <div class="container">
 
-            <div><a href="{{route('laptop.edit', $laptop)}}">MODIFICA</a></div>
+{{--            <div><a href="{{route('laptop.edit', $laptop)}}">MODIFICA</a></div>--}}
 
             <div class="box-product mb-3">
 

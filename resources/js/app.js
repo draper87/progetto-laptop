@@ -22,9 +22,11 @@ $(document).ready(function () {
         $('#rambettercheckbox').lcs_off();
         $('#videocardbettercheckbox').lcs_off();
         $('#cpubettercheckbox').lcs_off();
+        $('#chassisbettercheckbox').lcs_off();
         $('.js-basic-single-videocard').val(null).trigger('change');
         $('.js-basic-single-cpu').val(null).trigger('change');
         $('.js-basic-multiple-ram').val(null).trigger('change');
+        $('.js-basic-single-chassis').val(null).trigger('change');
         sliderDisplay.noUiSlider.reset();
         sliderWeight.noUiSlider.reset();
         sliderPrice.noUiSlider.reset();
@@ -155,12 +157,22 @@ $(document).ready(function () {
     $(document).on('click', '.next', function () {
         if (currentPage !== lastPage) {
             chiamaLaptops(paginaSuccessiva);
+            setTimeout(function () {
+                $('html, body').animate({
+                    scrollTop: $("#show").offset().top
+                }, 1000);
+            }, 500);
         }
     });
     // aggiungo un event listener per il bottone previous
     $(document).on('click', '.previous', function () {
         if (currentPage !== 1) {
             chiamaLaptops(paginaIndietro);
+            setTimeout(function () {
+                $('html, body').animate({
+                    scrollTop: $("#show").offset().top
+                }, 1000);
+            }, 500);
         }
 
     });
