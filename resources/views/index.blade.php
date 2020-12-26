@@ -27,7 +27,7 @@
                                                 <option value="{{ $videocard->name }}">{{ $videocard->name }}</option>
                                             @endforeach
                                         </select>
-                                        <span class="pr-2 pl-2">And better</span>
+                                        <span class="better pr-2 pl-2">And better</span>
                                         <input id="videocardbettercheckbox" type="checkbox" name="videocardbetter" value="1" />
                                     </div>
 
@@ -46,7 +46,7 @@
                                                 <option value="{{ $core }}">{{ $core }}</option>
                                             @endforeach
                                         </select>
-                                        <span class="pr-2 pl-2">And better</span>
+                                        <span class="better pr-2 pl-2">And better</span>
                                         <input id="cpubettercheckbox" type="checkbox" name="cpubetter" value="1" />
                                     </div>
 
@@ -69,18 +69,18 @@
                                             <option value="{{ $ram }}">{{ $ram }}Gb</option>
                                             @endforeach
                                         </select>
-                                        <span class="pr-2 pl-2">And better</span>
+                                        <span class="better pr-2 pl-2">And better</span>
                                         <input id="rambettercheckbox" type="checkbox" id="ram_better" value="1" />
                                     </div>
 
                                     <div>
                                         <select class="w-50 js-basic-single-chassis" name="chassis" id="chassis">
                                             <option></option>
-                                                <option value="premium">Premium (CNC Aluminium, Magnesium) </option>
-                                                <option value="mixed">Mixed (Aluminium and Plastic) </option>
+                                                <option value="premium">Premium (CNC Aluminum, Magnesium) </option>
+                                                <option value="mixed">Mixed (Aluminum and Plastic) </option>
                                                 <option value="plastic">Plastic</option>
                                         </select>
-                                        <span class="pr-2 pl-2">And better</span>
+                                        <span class="better pr-2 pl-2">And better</span>
                                         <input id="chassisbettercheckbox" type="checkbox" name="chassisbetter" value="1" />
                                     </div>
 
@@ -145,9 +145,10 @@
 
                             <div id="form-input" class="text-center mt-5">
 
-                                <img src="{{asset('storage') . '/' . 'images/funnel.png'}}" alt="reset" class="mr-4 mt-5 pointer" id="moreFilters">
+                                <img src="{{asset('storage') . '/' . 'images/funnel.png'}}" alt="moreFilters" class="mr-4 mt-5 pointer" id="moreFilters">
 
-                                <input class="mt-5 btn btn-teal btn-marketing rounded-pill lift lift-sm" id="bottone" value="Search">
+                                <img src="{{asset('storage') . '/' . 'images/search.png'}}" alt="search" class="mr-2 ml-2 mt-5 pointer" id="bottone">
+{{--                                <input class="mt-5 btn btn-teal btn-marketing rounded-pill lift lift-sm" id="bottone" value="Search">--}}
 
                                 <img src="{{asset('storage') . '/' . 'images/reset.png'}}" alt="reset" class="ml-4 mt-5 pointer" id="reset">
 

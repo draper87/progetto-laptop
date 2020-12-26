@@ -19,10 +19,10 @@ $(document).ready(function () {
     // bottone form reset
     $('#reset').click(function () {
         event.preventDefault();
-        $('#rambettercheckbox').lcs_off();
-        $('#videocardbettercheckbox').lcs_off();
-        $('#cpubettercheckbox').lcs_off();
-        $('#chassisbettercheckbox').lcs_off();
+        $('#rambettercheckbox').lcs_on();
+        $('#videocardbettercheckbox').lcs_on();
+        $('#cpubettercheckbox').lcs_on();
+        $('#chassisbettercheckbox').lcs_on();
         $('.js-basic-single-videocard').val(null).trigger('change');
         $('.js-basic-single-cpu').val(null).trigger('change');
         $('.js-basic-multiple-ram').val(null).trigger('change');
@@ -95,6 +95,7 @@ $(document).ready(function () {
                 laptopMaterial: laptopMaterial,
                 coresChecked: coresChecked,
                 videocardChecked: videocardChecked,
+                chassisChecked: chassisChecked,
                 display: sliderDisplay.noUiSlider.get(),
                 price: sliderPrice.noUiSlider.get(),
                 mySliderWeight: sliderWeight.noUiSlider.get(),
@@ -210,8 +211,16 @@ $(document).ready(function () {
     });
 
     // Switcher (tasti on-off relativi alle select)
+
+    //
+
+
+
+
+
     $('#rambettercheckbox').lc_switch('Yes', 'No');
-    var ramchecked = 0;
+    $('#rambettercheckbox').lcs_on();
+    var ramchecked = 1;
     $('body').delegate('#rambettercheckbox', 'lcs-on', function () {
         ramchecked = 1;
         // console.log(ramchecked);
@@ -222,7 +231,8 @@ $(document).ready(function () {
     });
 
     $('#videocardbettercheckbox').lc_switch('Yes', 'No');
-    var videocardChecked = 0;
+    $('#videocardbettercheckbox').lcs_on();
+    var videocardChecked = 1;
     $('body').delegate('#videocardbettercheckbox', 'lcs-on', function () {
         videocardChecked = 1;
     });
@@ -231,7 +241,8 @@ $(document).ready(function () {
     });
 
     $('#cpubettercheckbox').lc_switch('Yes', 'No');
-    var coresChecked = 0;
+    $('#cpubettercheckbox').lcs_on();
+    var coresChecked = 1;
     $('body').delegate('#cpubettercheckbox', 'lcs-on', function () {
         coresChecked = 1;
     });
@@ -240,7 +251,8 @@ $(document).ready(function () {
     });
 
     $('#chassisbettercheckbox').lc_switch('Yes', 'No');
-    var chassisChecked = 0;
+    $('#chassisbettercheckbox').lcs_on();
+    var chassisChecked = 1;
     $('body').delegate('#chassisbettercheckbox', 'lcs-on', function () {
         chassisChecked = 1;
     });

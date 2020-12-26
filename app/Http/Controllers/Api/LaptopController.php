@@ -81,12 +81,25 @@ class LaptopController extends Controller
         // restituisco solamente i risultati con il material dello chassis selezionato
         if ($laptop_material = $request->get('laptopMaterial')) {
             if ($laptop_material === 'plastic') {
-                $queryLaptop->where('material', '=','plastic');
+                if ($request->input('chassisChecked') == 1) {
+                    $queryLaptop->where('material', '=', 'plastic')
+                        ->orWhere('material', '=', 'mixed')
+                        ->orWhere('material', '=', 'aluminum')
+                        ->orWhere('material', '=', 'magnesium');
+                } else {
+                    $queryLaptop->where('material', '=', 'plastic');
+                }
             } elseif ($laptop_material === 'mixed') {
-                $queryLaptop->where('material', '=','mixed');
+                if ($request->input('chassisChecked') == 1) {
+                    $queryLaptop->where('material', '=', 'mixed')
+                        ->orWhere('material', '=', 'aluminum')
+                        ->orWhere('material', '=', 'magnesium');
+                } else {
+                    $queryLaptop->where('material', '=', 'mixed');
+                }
             } else {
-                $queryLaptop->where('material', '=','aluminum')
-                    ->orWhere('material','=','magnesium');
+                $queryLaptop->where('material', '=', 'aluminum')
+                    ->orWhere('material', '=', 'magnesium');
             }
         }
 

@@ -37,6 +37,29 @@
 
             <div class="box-product mb-3">
 
+                <div class="card w-100 mb-2 lift">
+                    <h5 class="card-header">Description</h5>
+                    <div class="card-body">
+                        <span class="card-text">The {{$laptop->name}} is equipped with a chassis made of {{$laptop->material}}, {{$laptop->ram_memory}}Gb of Ram, a {{$laptop->display_size}}" size display, and
+                            it costs {{$laptop->price}}$.
+                        </span>
+                        @if($laptop->videocard->score > 5000 && $laptop->videocard->score < 10000)
+                        <span> It comes with a {{$laptop->videocard_name}}, a videocard suitable for gaming, although don't expected to play at ultra settings with recent videogames.</span>
+                        @elseif ($laptop->videocard->score > 10000)
+                        <span> The {{$laptop->videocard_name}} it's a good choice for gaming, expect to play at ultra settings with recent videogames.</span>
+                        @else ($laptop->videocard->score > 10000)
+                        <span> Not a very good choice for gaming, expect to play at low settings with recent videogames.</span>
+                        @endif
+                        @if($laptop->weight < 2)
+                        <span> E un portatile molto leggero, potete portarvelo tranquillamente con voi.</span>
+                        @elseif ($laptop->weight > 4)
+                        <span> Dato il peso considerevole consideratelo un desktop replacement.</span>
+                        @endif
+                        @if($laptop->max_temp > 60)
+                        <span> Lunghe sessioni di gioco porteranno il laptop a scaldarsi in modo eccessivo.</span>
+                        @endif
+                    </div>
+                </div>
 
                 <div class="left-box card">
 
@@ -139,6 +162,8 @@
 
             </div>
 
+            {{--     Sezione card grandi       --}}
+
             <div class="box-product mb-3">
 
                 <div id="cpu-info" class="box card pt-5 lift">
@@ -149,9 +174,9 @@
                     <ul class="list-group list-group-flush pt-5 text-center">
                         <li class="list-group-item">{{$laptop->cpu_name}}</li>
                         <li class="list-group-item list-group-item-dark"># Cores: {{$laptop->cpu->cores}}</li>
-                        <li class="list-group-item list-group-item-dark">Passmark Score: {{$laptop->cpu->score}}
+                        <li class="list-group-item list-group-item-dark">Passmark© Score: {{$laptop->cpu->score}}
                             <span class="float-right" data-toggle="tooltip" data-placement="top"
-                                  title="Show the score of the CPU based on the Passmark benchmark. The higher the better."><img
+                                  title="Show the score of the CPU based on the Passmark© benchmark. The higher the better."><img
                                     src="{{asset('storage') . '/' . 'images/info.png'}}" alt="info"></span></li>
                     </ul>
 
@@ -165,9 +190,9 @@
 
                     <ul class="list-group list-group-flush pt-5 text-center">
                         <li class="list-group-item">{{$laptop->videocard_name}}</li>
-                        <li class="list-group-item list-group-item-dark">Passmark Score: {{$laptop->videocard->score}}
+                        <li class="list-group-item list-group-item-dark">Passmark© Score: {{$laptop->videocard->score}}
                             <span class="float-right" data-toggle="tooltip" data-placement="top"
-                                  title="Show the score of the GPU based on the Passmark benchmark. The higher the better."><img
+                                  title="Show the score of the GPU based on the Passmark© benchmark. The higher the better."><img
                                     src="{{asset('storage') . '/' . 'images/info.png'}}" alt="info"></span></li>
                     </ul>
 
@@ -281,14 +306,6 @@
                 </div>
 
 
-            </div>
-
-            <div class="card mt-4 mb-2 lift">
-                <h5 class="card-header">Description</h5>
-                <div class="card-body">
-                    <p class="card-text">The {{$laptop->name}} is equipped with a chassis made of {{$laptop->material}}, {{$laptop->ram_memory}}Gb of Ram, a {{$laptop->display_size}}" monitor, and
-                        it costs {{$laptop->price}}$</p>
-                </div>
             </div>
 
 

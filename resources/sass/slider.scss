@@ -142,4 +142,10 @@
     }
 
 }
+// SEZIONE MEDIA QUERY PERSONALIZZATE
+@media (max-width: 767px) {
+    .moreSlider .main {
+        width: 100%;
+    }
+}
 

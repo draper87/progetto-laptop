@@ -50,12 +50,20 @@
     cursor: pointer;
 }
 // lift effect per bottoni reset e more filters
-#moreFilters, #reset {
+#moreFilters, #reset, #bottone {
     transition: transform 0.15s ease-in-out;
 }
-#moreFilters:hover, #reset:hover {
+#moreFilters:hover, #reset:hover, #bottone:hover {
     transform: translateY(-0.1666666667rem);
 }
+// bottoni pagination
+.previous, .next {
+    margin-right: 0.5rem !important;
+    border: none !important;
+    background-color: #00ba94 !important;
+    color: white !important;
+}
+
 
 
 @charset "UTF-8";
@@ -6845,8 +6853,10 @@ input[type=button].btn-block {
 .card-header {
     padding: 1rem 1.35rem;
     margin-bottom: 0;
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: #0089ba;
+    //background-color: rgba(0, 0, 0, 0.03);
     border-bottom: 0 solid rgba(0, 0, 0, 0.125);
+    color: #fff !important;
 }
 .card-header:first-child {
     border-radius: 0.35rem 0.35rem 0 0;
@@ -8483,8 +8493,8 @@ a.badge-danger-soft:focus, a.badge-danger-soft.focus {
 }
 
 .list-group-item-dark {
-    color: #101722;
-    background-color: #c0c4ca;
+    color: #fff;
+    background-color: #0089ba;
 }
 .list-group-item-dark.list-group-item-action:hover, .list-group-item-dark.list-group-item-action:focus {
     color: #101722;
@@ -21053,7 +21063,7 @@ section {
 
 // PARTE MEDIA QUERY PERSONALIZZATE
 // media query per smartphone
-@media (max-width: 576px) {
+@media (max-width: 767px) {
     .form-container {
         display: block;
         #form-left {
@@ -21063,9 +21073,31 @@ section {
             .w-50 {
                 width: 100% !important;
             }
+            .better, #chassisbettercheckbox, #rambettercheckbox, #cpubettercheckbox, .lcs_switch {
+                display: none;
+            }
         }
         #form-right {
             width: 100% !important;
         }
+    }
+    .box-product {
+        margin-bottom: 0 !important;
+        .left-box {
+            width: 100%;
+        }
+        .right-box {
+            padding-top: 1rem !important;
+            width: 100%;
+        }
+        > .box {
+            margin-top: 1rem !important;
+            width: 100%;
+        }
+    }
+}
+@media (min-width: 475px) and (max-width: 768px) {
+    .laptop-img {
+        height: 380px !important;
     }
 }
