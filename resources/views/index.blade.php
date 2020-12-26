@@ -166,7 +166,7 @@
     </header>
 
 
-    <section id="show" class="bg-white py-10">
+    <section id="show" class="bg-white py-5">
         <div class="container">
 
 
@@ -203,12 +203,17 @@
             <img class="card-img-top" src="{{asset('storage')}}/@{{image_path}}" alt="@{{image_path}}">
             </div>
             <div class="card-body">
-                <h3 class="text-primary mb-0">@{{brand}}</h3>
+                <h3 class="text-success mb-0">@{{brand}}</h3>
                 <div class="small text-gray-800 font-weight-500">@{{name}}</div>
                 <div class="small text-gray-500">GPU: @{{videocard_name}}</div>
                 <div class="small text-gray-500">CPU: @{{cpu_name}}</div>
-                <div class="small text-gray-500">Display: @{{display_size}}"</div>
-                <div class="small text-gray-500">Ram: @{{ram_memory}}Gb</div>
+<!--                <div class="small text-gray-500">Display: @{{display_size}}"</div>-->
+<!--                <div class="small text-gray-500">Ram: @{{ram_memory}}Gb</div>-->
+                <div class="tile pt-3 pb-2">
+                    <span class="single-tile"><img class="tile-img" src="{{asset('storage') . '/' . 'images/size.svg'}}" alt="screen_size"> @{{display_size}}"</span>
+                    <span class="single-tile"><img class="tile-img" src="{{asset('storage') . '/' . 'images/003-ram.svg'}}" alt="ram"> @{{ram_memory}}Gb</span>
+                    <span class="single-tile"><img class="tile-img" src="{{asset('storage') . '/' . 'images/weight.svg'}}" alt="ram"> @{{weight}}</span>
+                </div>
             </div>
 <!--            <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">-->
 <!--                <div class="small text-gray-500">View Full Specs</div>-->

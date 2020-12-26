@@ -2,6 +2,13 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    .card-body-show {
+        -webkit-box-flex: 1;
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 1.35rem;
+        z-index: 3;
+    }
     .box {
         display: flex;
         flex-direction: column;

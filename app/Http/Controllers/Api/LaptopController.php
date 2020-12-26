@@ -110,7 +110,7 @@ class LaptopController extends Controller
 
         $queryLaptop->with(['Cpu', 'Videocard']);
 
-        return $queryLaptop->orderBy('updated_at', 'desc')->paginate(15);
+        return $queryLaptop->orderBy('laptops.updated_at', 'desc')->paginate(15);
     }
 }
 

@@ -63,6 +63,16 @@
     background-color: #00ba94 !important;
     color: white !important;
 }
+// parte relativa alle icone delle tile
+.single-tile {
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    .tile-img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
 
 
 
@@ -6826,7 +6836,7 @@ input[type=button].btn-block {
     -webkit-box-flex: 1;
     flex: 1 1 auto;
     min-height: 1px;
-    padding: 1.35rem;
+    padding-bottom: 1rem;
     z-index: 3;
 }
 
@@ -17163,7 +17173,7 @@ a.text-secondary:hover, a.text-secondary:focus {
 }
 
 .text-success {
-    color: #00ac69 !important;
+    color: #00BA94 !important;
 }
 
 a.text-success:hover, a.text-success:focus {
@@ -21063,7 +21073,7 @@ section {
 
 // PARTE MEDIA QUERY PERSONALIZZATE
 // media query per smartphone
-@media (max-width: 767px) {
+@media (max-width: 992px) {
     .form-container {
         display: block;
         #form-left {
@@ -21096,8 +21106,13 @@ section {
         }
     }
 }
-@media (min-width: 475px) and (max-width: 768px) {
+@media (min-width: 475px) and (max-width: 767px) {
     .laptop-img {
         height: 380px !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+    .laptop-img {
+        height: 500px !important;
     }
 }

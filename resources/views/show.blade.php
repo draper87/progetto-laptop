@@ -39,7 +39,7 @@
 
                 <div class="card w-100 mb-2 lift">
                     <h5 class="card-header">Description</h5>
-                    <div class="card-body">
+                    <div class="card-body-show">
                         <span class="card-text">The {{$laptop->name}} is equipped with a chassis made of {{$laptop->material}}, {{$laptop->ram_memory}}Gb of Ram, a {{$laptop->display_size}}" size display, and
                             it costs {{$laptop->price}}$.
                         </span>
