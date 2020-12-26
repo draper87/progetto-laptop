@@ -13,7 +13,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-12">
                         <h1 class="page-header-title text-center">Find your best laptop</h1>
-                        <p class="page-header-text mb-5 text-center">Welcome to Laptop Easy, a simple yet powerful search engine to find out the best laptop according to your needs, whether they're gaming, business or creative.</p>
+                        <p class="page-header-text mb-5 text-center">Welcome to Laptop Easy, a simple yet powerful search engine to find out the best laptop according to your needs, whether they be for gaming, business or content creation.</p>
 
                         {{-- Sezione relativa al form --}}
                         <form>
