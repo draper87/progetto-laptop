@@ -12,7 +12,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-12">
-                        <h1 class="page-header-title text-center">Find your best laptop</h1>
+                        <h1 class="page-header-title text-center font-weight-bold">Find your best laptop</h1>
                         <p class="page-header-text mb-5 text-center">Welcome to Laptop Easy, a simple yet powerful search engine to find out the best laptop according to your needs, whether they be for gaming, business or content creation.</p>
 
                         {{-- Sezione relativa al form --}}
@@ -21,7 +21,7 @@
                             <div class="form-container">
                                 <div id="form-left">
 
-                                    <div class="w-75 mb-2 pt-4 clearfix better">
+                                    <div class="w-75 mb-2 pt-3 clearfix better">
                                         <span class="float-right pl-4 pr-2 font-weight-bold">and better
                                             <span class="float-none"
                                                   data-toggle="tooltip"

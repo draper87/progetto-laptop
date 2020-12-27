@@ -82,24 +82,24 @@ class LaptopController extends Controller
         if ($laptop_material = $request->get('laptopMaterial')) {
             if ($laptop_material === 'plastic') {
                 if ($request->input('chassisChecked') == 1) {
-                    $queryLaptop->where('material', '=', 'plastic')
-                        ->orWhere('material', '=', 'mixed')
-                        ->orWhere('material', '=', 'aluminum')
-                        ->orWhere('material', '=', 'magnesium');
+                    $queryLaptop->whereIn('material', ['mixed', 'aluminum', 'magnesium', 'plastic']);
+//                        ->orWhere('material', '=', 'mixed')
+//                        ->orWhere('material', '=', 'aluminum')
+//                        ->orWhere('material', '=', 'magnesium');
                 } else {
                     $queryLaptop->where('material', '=', 'plastic');
                 }
             } elseif ($laptop_material === 'mixed') {
                 if ($request->input('chassisChecked') == 1) {
-                    $queryLaptop->where('material', '=', 'mixed')
-                        ->orWhere('material', '=', 'aluminum')
-                        ->orWhere('material', '=', 'magnesium');
+                    $queryLaptop->whereIn('material', ['mixed', 'aluminum', 'magnesium']);
+//                        ->orWhere('material', '=', 'aluminum')
+//                        ->orWhere('material', '=', 'magnesium');
                 } else {
                     $queryLaptop->where('material', '=', 'mixed');
                 }
             } else {
-                $queryLaptop->where('material', '=', 'aluminum')
-                    ->orWhere('material', '=', 'magnesium');
+                $queryLaptop->whereIn('material', ['aluminum', 'magnesium']);
+//                    ->orWhere('material', '=', 'magnesium');
             }
         }
 
