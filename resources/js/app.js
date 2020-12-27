@@ -188,25 +188,25 @@ $(document).ready(function () {
     // SELECT
     // select per le videocard
     $('.js-basic-single-videocard').select2({
-        placeholder: "Select your videocard",
+        placeholder: "Select videocard",
         allowClear: true
     });
 
     // select per CPU Cores
     $('.js-basic-single-cpu').select2({
-        placeholder: "Select your CPU # Cores",
+        placeholder: "CPU # Cores",
         allowClear: true
     });
 
     // select per memoria ram
     $('.js-basic-multiple-ram').select2({
-        placeholder: "Select your ram amount",
+        placeholder: "Select ram amount",
         allowClear: true
     });
 
     // select per lo chassis
     $('.js-basic-single-chassis').select2({
-        placeholder: "Select your chassis material",
+        placeholder: "Select chassis material",
         allowClear: true
     });
 
@@ -268,18 +268,15 @@ $(document).ready(function () {
         start: [10, 18],
         connect: true,
         step: 1,
+        tooltips: true,
         range: {
             'min': 10,
             'max': 18
         },
-        pips: {
-            mode: 'positions',
-            values: [0, 25, 50, 75, 100],
-            density: 15,
-            format: wNumb({
-                suffix: '"'
-            })
-        }
+        format: wNumb({
+            decimals: 0,
+            suffix: '"'
+        })
     });
 
     // range slider per il peso laptop
@@ -289,18 +286,15 @@ $(document).ready(function () {
         start: [0, 5],
         connect: true,
         step: 1,
+        tooltips: true,
         range: {
             'min': 0,
             'max': 5
         },
-        pips: {
-            mode: 'positions',
-            values: [0, 20, 40, 60, 80, 100],
-            density: 15,
-            format: wNumb({
-                suffix: 'Kg'
-            })
-        }
+        format: wNumb({
+            decimals: 0,
+            suffix: 'Kg'
+        })
     });
 
     // range slider per il prezzo

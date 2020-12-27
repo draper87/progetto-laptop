@@ -20,19 +20,24 @@
 
                             <div class="form-container">
                                 <div id="form-left">
-                                    <div class="mb-4">
-                                        <select class="w-50 js-basic-single-videocard" name="video_card" id="videocard">
-                                            <option></option>
-                                            @foreach ($videocards as $videocard)
-                                                <option value="{{ $videocard->name }}">{{ $videocard->name }}</option>
-                                            @endforeach
-                                        </select>
-                                        <span class="better pr-2 pl-2">And better</span>
-                                        <input id="videocardbettercheckbox" type="checkbox" name="videocardbetter" value="1" />
+
+                                    <div class="w-75 mb-2 pt-4 clearfix better">
+                                        <span class="float-right pl-4 pr-2 font-weight-bold">and better
+                                            <span class="float-none"
+                                                  data-toggle="tooltip"
+                                                  data-placement="top"
+                                                  title="Set to yes will also return laptops with better characteristics than the one selected.">
+                                                <img class="question-icon"
+                                                 src="{{asset('storage') . '/' . 'images/questionmark.svg'}}"
+                                                 alt="info">
+                                            </span>
+                                        </span>
                                     </div>
 
-                                    <div class="mb-4">
-                                        <select class="w-50 js-basic-single-cpu" name="cpu" id="cpu">
+                                    <div class="w-75 mb-3">
+                                        <span class="single-tile"><img class="tile-img" src="{{asset('storage') . '/' . 'images/cores.svg'}}" alt="cores"></span>
+
+                                        <select class="w-30 js-basic-single-cpu" name="cpu" id="cpu">
                                             <option></option>
                                             @php
                                                 foreach ($cpus as $cpu){
@@ -46,12 +51,16 @@
                                                 <option value="{{ $core }}">{{ $core }}</option>
                                             @endforeach
                                         </select>
-                                        <span class="better pr-2 pl-2">And better</span>
-                                        <input id="cpubettercheckbox" type="checkbox" name="cpubetter" value="1" />
+                                        <span class="better pr-2 pl-2 float-right">
+                                            <input id="cpubettercheckbox" type="checkbox" name="cpubetter" value="1"/>
+                                        </span>
+
                                     </div>
 
-                                    <div class="mb-4">
-                                        <select class="w-50 js-basic-multiple-ram" name="ram_memory" id="ram_memory">
+                                    <div class="w-75 mb-3">
+                                        <span class="single-tile"><img class="tile-img" src="{{asset('storage') . '/' . 'images/003-ram.svg'}}" alt="ram"></span>
+
+                                        <select class="w-40 js-basic-multiple-ram" name="ram_memory" id="ram_memory">
                                             <option></option>
 
                                             {{--    per evitare duplicati nella select della Ram uso array_unique--}}
@@ -69,26 +78,50 @@
                                             <option value="{{ $ram }}">{{ $ram }}Gb</option>
                                             @endforeach
                                         </select>
-                                        <span class="better pr-2 pl-2">And better</span>
-                                        <input id="rambettercheckbox" type="checkbox" id="ram_better" value="1" />
+                                        <span class="better pr-2 pl-2 float-right">
+                                            <input id="rambettercheckbox" type="checkbox" id="ram_better" value="1" />
+                                        </span>
+
                                     </div>
 
-                                    <div>
-                                        <select class="w-50 js-basic-single-chassis" name="chassis" id="chassis">
+                                    <div class="w-75 mb-3">
+
+                                        <span class="single-tile"><img class="tile-img" src="{{asset('storage') . '/' . 'images/chassis.svg'}}" alt="chassis"></span>
+
+                                        <select class="w-60 js-basic-single-chassis" name="chassis" id="chassis">
                                             <option></option>
-                                                <option value="premium">Premium (CNC Aluminum, Magnesium) </option>
-                                                <option value="mixed">Mixed (Aluminum and Plastic) </option>
-                                                <option value="plastic">Plastic</option>
+                                            <option value="premium">Premium (Aluminum, Magnesium) </option>
+                                            <option value="mixed">Mixed (Aluminum and Plastic) </option>
+                                            <option value="plastic">Plastic</option>
                                         </select>
-                                        <span class="better pr-2 pl-2">And better</span>
-                                        <input id="chassisbettercheckbox" type="checkbox" name="chassisbetter" value="1" />
+                                        <span class="better pr-2 pl-2 float-right">
+                                            <input id="chassisbettercheckbox" type="checkbox" name="chassisbetter" value="1" />
+                                        </span>
+
+                                    </div>
+
+                                    <div class="w-75 mb-3">
+
+                                        <span class="single-tile"><img class="tile-img" src="{{asset('storage') . '/' . 'images/gpu.svg'}}" alt="gpu"></span>
+
+                                        <select class="js-basic-single-videocard" name="video_card" id="videocard">
+                                            <option></option>
+                                            @foreach ($videocards as $videocard)
+                                                <option value="{{ $videocard->name }}">{{ $videocard->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        <span class="better pr-2 pl-2 float-right">
+                                            <input id="videocardbettercheckbox" type="checkbox" name="videocardbetter" value="1" />
+                                        </span>
+
                                     </div>
 
                                 </div>
-                                <div id="form-right">
+                                <div id="form-right" class="">
 
-                                    <div class="mb-5">
+                                    <div class="mb-5 text-center">
                                         <h4 class="text-center text-white">Display size</h4>
+
                                         <div id="sliderDisplay" ></div>
                                     </div>
 
@@ -97,7 +130,7 @@
                                         <div id="sliderWeight"></div>
                                     </div>
 
-                                    <div class="pt-3">
+                                    <div class="">
                                         <h4 class="text-center text-white">Price</h4>
                                         <div id="sliderPrice"></div>
                                     </div>
@@ -109,37 +142,39 @@
                             <div id="filters" class="mt-5">
 {{--                                <span>Per-key RGB</span>--}}
 
-                                <div class="moreSlider">
 
-                                    <div id="laptopTemperature" class="mt-3">
-                                        <div class="main">
+                                    <div class="moreSlider">
 
-                                            <label for="panel_size" class="text-center">
+                                        <div id="laptopTemperature" class="mt-3">
+                                            <div class="main">
+
+                                                <label for="panel_size" class="text-center">
                                                 <span class="float-right"
-                                                  data-toggle="tooltip"
-                                                  data-placement="top"
-                                                  title="Set the maximum temperature reachable by the surface of the
+                                                      data-toggle="tooltip"
+                                                      data-placement="top"
+                                                      title="Set the maximum temperature reachable by the surface of the
                                                    laptop when CPU/GPU run at high frequencies for extended periods of time.">
                                             <img class="question-icon" src="{{asset('storage') . '/' . 'images/information.png'}}"
                                                  alt="info"></span>
-                                                Laptop Temperature (C°)
-                                                <span id="fahrenheit"></span>
+                                                    Laptop Temperature (C°)
+                                                    <span id="fahrenheit"></span>
 
-                                            </label>
+                                                </label>
 
-                                            <input
-                                                type="range"
-                                                name="laptopTemperature"
-                                                min="30"
-                                                max="65"
-                                                value="30"
-                                            >
-                                            <span class="rangeslider__tooltip" id ="range-tooltip-temperature"></span>
+                                                <input
+                                                    type="range"
+                                                    name="laptopTemperature"
+                                                    min="30"
+                                                    max="65"
+                                                    value="30"
+                                                >
+                                                <span class="rangeslider__tooltip" id ="range-tooltip-temperature"></span>
+                                            </div>
                                         </div>
+
                                     </div>
 
 
-                                </div>
 
                             </div>
 
