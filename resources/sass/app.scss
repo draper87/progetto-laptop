@@ -38,6 +38,23 @@
 // sezione filter
 #filters {
     display: none;
+    .card-header {
+        background-color: #00ba94;
+        text-align: center;
+    }
+}
+.morefilter {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .filter-box {
+        text-align: center;
+        width: 49%;
+        > span {
+            width: 50% !important;
+        }
+    }
 }
 // pointer
 .question-icon {
@@ -71,10 +88,10 @@
 .single-tile {
     padding-left: 0.5rem;
     padding-top: 0.5rem;
-    .tile-img {
-        width: 32px;
-        height: 32px;
-    }
+}
+.tile-img {
+    width: 32px;
+    height: 32px;
 }
 // test
 .opacity {

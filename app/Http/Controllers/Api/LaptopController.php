@@ -83,29 +83,28 @@ class LaptopController extends Controller
             if ($laptop_material === 'plastic') {
                 if ($request->input('chassisChecked') == 1) {
                     $queryLaptop->whereIn('material', ['mixed', 'aluminum', 'magnesium', 'plastic']);
-//                        ->orWhere('material', '=', 'mixed')
-//                        ->orWhere('material', '=', 'aluminum')
-//                        ->orWhere('material', '=', 'magnesium');
                 } else {
                     $queryLaptop->where('material', '=', 'plastic');
                 }
             } elseif ($laptop_material === 'mixed') {
                 if ($request->input('chassisChecked') == 1) {
                     $queryLaptop->whereIn('material', ['mixed', 'aluminum', 'magnesium']);
-//                        ->orWhere('material', '=', 'aluminum')
-//                        ->orWhere('material', '=', 'magnesium');
                 } else {
                     $queryLaptop->where('material', '=', 'mixed');
                 }
             } else {
                 $queryLaptop->whereIn('material', ['aluminum', 'magnesium']);
-//                    ->orWhere('material', '=', 'magnesium');
             }
         }
 
         // restituisco solamente i risultati con il laptop temperature selezionato
         if ($laptop_max_temperature = $request->get('laptopTemperature')) {
             $queryLaptop->where('max_temp', '<=' , $laptop_max_temperature);
+        }
+
+        // restituisco solamente i risultati con il brand selezionato
+        if ($brand = $request->get('brand')) {
+            $queryLaptop->where('brand', '=' , $brand);
         }
 
         $queryLaptop->with(['Cpu', 'Videocard']);

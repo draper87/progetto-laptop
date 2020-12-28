@@ -63,6 +63,12 @@ $(document).ready(function () {
         laptopMaterial = $('#chassis').val();
     })
 
+    // metto in una variabile il valore scelto dall utente della select "brand"
+    var brand;
+    $("#brand").change(function () {
+        brand = $('#brand').val();
+    })
+
 
     // metto in una variabile il valore scelto dall utente dello slider laptop Noise
     var laptopNoise;
@@ -100,6 +106,7 @@ $(document).ready(function () {
                 price: sliderPrice.noUiSlider.get(),
                 mySliderWeight: sliderWeight.noUiSlider.get(),
                 laptopTemperature: laptopTemperature,
+                brand: brand,
                 page: page,
             },
             success: function (dataResponse) {
@@ -210,13 +217,13 @@ $(document).ready(function () {
         allowClear: true
     });
 
+    // select per il brand
+    $('.js-basic-single-brand').select2({
+        placeholder: "Select brand",
+        allowClear: true
+    });
+
     // Switcher (tasti on-off relativi alle select)
-
-    //
-
-
-
-
 
     $('#rambettercheckbox').lc_switch('Yes', 'No');
     $('#rambettercheckbox').lcs_on();

@@ -1,23 +1,28 @@
 .moreSlider {
+
+    #laptopTemperature{
+        text-align: -webkit-center;
+    }
+
     .main {
         width: 400px;
-        margin: auto;
-        color: #716894;
+        color: #797979;
     }
 
     label {
         display: block;
-        margin-bottom: 2.5em;
-        font-size: 13px;
+        margin-bottom: 1.5em;
+        margin-left: 1rem;
+        font-size: 1rem;
         font-weight: bold;
-        color: white;
+        color: #797979;
     }
 
     .rangeslider__tooltip {
         display: block;
         margin-top: 2.5em;
         font-size: 12px;
-        color: white;
+        color: black;
     }
 
     .rangeslider,

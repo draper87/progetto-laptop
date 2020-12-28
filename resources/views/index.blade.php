@@ -35,7 +35,7 @@
                                     </div>
 
                                     <div class="w-75 mb-3">
-                                        <span class="single-tile"><img class="tile-img" src="{{asset('storage') . '/' . 'images/cores.svg'}}" alt="cores"></span>
+                                        <span><img class="tile-img" src="{{asset('storage') . '/' . 'images/cores.svg'}}" alt="cores"></span>
 
                                         <select class="w-30 js-basic-single-cpu" name="cpu" id="cpu">
                                             <option></option>
@@ -58,7 +58,7 @@
                                     </div>
 
                                     <div class="w-75 mb-3">
-                                        <span class="single-tile"><img class="tile-img" src="{{asset('storage') . '/' . 'images/003-ram.svg'}}" alt="ram"></span>
+                                        <span><img class="tile-img" src="{{asset('storage') . '/' . 'images/003-ram.svg'}}" alt="ram"></span>
 
                                         <select class="w-40 js-basic-multiple-ram" name="ram_memory" id="ram_memory">
                                             <option></option>
@@ -86,7 +86,7 @@
 
                                     <div class="w-75 mb-3">
 
-                                        <span class="single-tile"><img class="tile-img" src="{{asset('storage') . '/' . 'images/chassis.svg'}}" alt="chassis"></span>
+                                        <span><img class="tile-img" src="{{asset('storage') . '/' . 'images/chassis.svg'}}" alt="chassis"></span>
 
                                         <select class="w-60 js-basic-single-chassis" name="chassis" id="chassis">
                                             <option></option>
@@ -102,7 +102,7 @@
 
                                     <div class="w-75 mb-3">
 
-                                        <span class="single-tile"><img class="tile-img" src="{{asset('storage') . '/' . 'images/gpu.svg'}}" alt="gpu"></span>
+                                        <span><img class="tile-img" src="{{asset('storage') . '/' . 'images/gpu.svg'}}" alt="gpu"></span>
 
                                         <select class="js-basic-single-videocard" name="video_card" id="videocard">
                                             <option></option>
@@ -139,46 +139,69 @@
                                 </div>
                             </div>
 
-                            <div id="filters" class="mt-5">
+                            <div id="filters" class="mt-5 card">
 {{--                                <span>Per-key RGB</span>--}}
 
+                                    <div class="card-header">
+                                        <span>More Filters</span>
+                                    </div>
 
-                                    <div class="moreSlider">
+                                    <div class="morefilter card-body-show">
 
-                                        <div id="laptopTemperature" class="mt-3">
-                                            <div class="main">
+                                        <div class="filter-box">
+                                            <select class="js-basic-single-brand" name="brand" id="brand">
+                                                <option></option>
+                                                @php
+                                                    foreach ($laptops as $laptop){
+                                                        $array_brands[] = $laptop->brand;
+                                                        $array_unique_brands = array_unique($array_brands);
+                                                    }
 
-                                                <label for="panel_size" class="text-center">
+                                                    sort($array_unique_brands);
+                                                @endphp
+                                                @foreach ($array_unique_brands as $brand)
+                                                    <option value="{{ $brand }}">{{ $brand }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                        <div class="filter-box moreSlider float-right pr-2">
+
+                                            <div id="laptopTemperature" class="">
+                                                <div class="main">
+
+                                                    <label for="panel_size" class="text-center">
                                                 <span class="float-right"
                                                       data-toggle="tooltip"
                                                       data-placement="top"
                                                       title="Set the maximum temperature reachable by the surface of the
                                                    laptop when CPU/GPU run at high frequencies for extended periods of time.">
-                                            <img class="question-icon" src="{{asset('storage') . '/' . 'images/information.png'}}"
+                                                <img class="question-icon"
+                                                 src="{{asset('storage') . '/' . 'images/questionmark.svg'}}"
                                                  alt="info"></span>
-                                                    Laptop Temperature (C°)
-                                                    <span id="fahrenheit"></span>
+                                                        Chassis Temperature (C°)
+                                                        <span id="fahrenheit"></span>
 
-                                                </label>
+                                                    </label>
 
-                                                <input
-                                                    type="range"
-                                                    name="laptopTemperature"
-                                                    min="30"
-                                                    max="65"
-                                                    value="30"
-                                                >
-                                                <span class="rangeslider__tooltip" id ="range-tooltip-temperature"></span>
+                                                    <input
+                                                        type="range"
+                                                        name="laptopTemperature"
+                                                        min="30"
+                                                        max="65"
+                                                        value="30"
+                                                    >
+                                                    <span class="rangeslider__tooltip" id ="range-tooltip-temperature"></span>
+                                                </div>
                                             </div>
+
                                         </div>
 
                                     </div>
 
-
-
                             </div>
 
-                            <div id="form-input" class="text-center mt-5">
+                            <div id="form-input" class="text-center mt-4">
 
                                 <img src="{{asset('storage') . '/' . 'images/funnel.png'}}" alt="moreFilters" class="mr-4 mt-5 pointer" id="moreFilters">
 
