@@ -21121,11 +21121,17 @@ section {
             display: block;
             width: 100%;
             margin-bottom: 2rem !important;
-            .w-50 {
-                width: 100% !important;
-            }
             .better, #chassisbettercheckbox, #rambettercheckbox, #cpubettercheckbox, .lcs_switch {
                 display: none;
+            }
+            select {
+                width: 100% !important;
+            }
+            .single-tile {
+                display: none;
+            }
+            .w-75 {
+                width: 100% !important;
             }
         }
         #form-right {
