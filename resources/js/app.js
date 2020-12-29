@@ -27,6 +27,8 @@ $(document).ready(function () {
         $('.js-basic-single-cpu').val(null).trigger('change');
         $('.js-basic-multiple-ram').val(null).trigger('change');
         $('.js-basic-single-chassis').val(null).trigger('change');
+        $('.js-basic-single-brand').val(null).trigger('change');
+        $('.js-basic-single-keyboard').val(null).trigger('change');
         sliderDisplay.noUiSlider.reset();
         sliderWeight.noUiSlider.reset();
         sliderPrice.noUiSlider.reset();
@@ -67,6 +69,12 @@ $(document).ready(function () {
     var brand;
     $("#brand").change(function () {
         brand = $('#brand').val();
+    })
+
+    // metto in una variabile il valore scelto dall utente della select "keyboard"
+    var keyboard;
+    $("#keyboard").change(function () {
+        keyboard = $('#keyboard').val();
     })
 
 
@@ -220,6 +228,12 @@ $(document).ready(function () {
     // select per il brand
     $('.js-basic-single-brand').select2({
         placeholder: "Select brand",
+        allowClear: true
+    });
+
+    // select per il brand
+    $('.js-basic-single-keyboard').select2({
+        placeholder: "Select keyboard's backlit",
         allowClear: true
     });
 

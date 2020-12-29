@@ -40,13 +40,20 @@
                 <div class="card w-100 mb-2 lift">
                     <h5 class="card-header">Description</h5>
                     <div class="card-body-show">
-                        <span class="card-text">The {{$laptop->name}} is equipped with a chassis made of {{$laptop->material}}, {{$laptop->ram_memory}}Gb of Ram, a {{$laptop->display_size}}" size display, and
-                            it costs {{$laptop->price}}$.
-                        </span>
+                        <span class="card-text">The {{$laptop->name}} comes with {{$laptop->ram_memory}}Gb of Ram, a {{$laptop->display_size}}" display and its chassis is made of</span>
+                        @if($laptop->material == 'plastic')
+                        <span> plastic.</span>
+                        @elseif($laptop->material == 'mixed')
+                        <span> plastic and aluminum.</span>
+                        @elseif($laptop->material == 'aluminum')
+                        <span> aluminum.</span>
+                        @else
+                        <span> magnesium.</span>
+                        @endif
                         @if($laptop->videocard->score > 5000 && $laptop->videocard->score < 10000)
-                        <span> It comes with a {{$laptop->videocard_name}}, a videocard suitable for gaming, although don't expected to play at ultra settings with recent videogames.</span>
+                        <span> It comes with a {{$laptop->videocard_name}}, a videocard suitable for gaming, although expected to play at medium-high settings with recent videogames in FHD.</span>
                         @elseif ($laptop->videocard->score > 10000)
-                        <span> The {{$laptop->videocard_name}} it's a good choice for gaming, expect to play at ultra settings with recent videogames.</span>
+                        <span> The {{$laptop->videocard_name}} it's a good choice for gaming, expect to play at ultra settings with recent videogames in FHD.</span>
                         @else ($laptop->videocard->score > 10000)
                         <span> Not a very good choice for gaming, expect to play at low settings with recent videogames.</span>
                         @endif
@@ -205,7 +212,13 @@
                     </div>
                     <ul class="list-group list-group-flush text-center pt-3">
                         <li class="list-group-item">Connections</li>
-                        <li class="list-group-item list-group-item-dark">{{$laptop->connections}}</li>
+                        <li class="list-group-item list-group-item-dark">
+                        @if($laptop->connections)
+                        {{$laptop->connections}}
+                        @else
+                        We don't have such information about this laptop.
+                        @endif
+                        </li>
                     </ul>
 
                 </div>
@@ -236,14 +249,14 @@
                                       title="Maximum temperature reached by laptop's chassis with CPU/GPU running at high rate clock."><img
                                         src="{{asset('storage') . '/' . 'images/info.png'}}" alt="info"></span></li>
                             <li class="list-group-item list-group-item-dark font-weight-200">
-                                @if($laptop->max_noise <= 41 && $laptop->max_noise != 0)
-                                    At this temperature the laptop should feel comfortable if lapped on your knee.
+                                @if($laptop->max_temp <= 41 && $laptop->max_temp != 0)
+                                    At this temperature placing the notebook on your lap, even for prolonged period of time does not cause any discomfort.
                                 @elseif ($laptop->max_temp == 0)
                                     We don't have such information about this laptop.
                                 @elseif ($laptop->max_temp > 41 && $laptop->max_temp < 50)
-                                    Start to feel hot! Long session with CPU running high could result in uncomfortable feeling with the laptop lapped on your knee.
+                                    Start to feel hot! Placing the notebook on your lap for a prolonged period of time may cause you discomfort.
                                 @else
-                                    Burning! At this temperature even laptop's keyboard start to feel hot.
+                                    Burning! At this temperature even laptop's keyboard may result in causing discomfort at your finger.
                                 @endif
                             </li>
                         </ul>
@@ -269,7 +282,7 @@
 
                     <div class="box-list">
                         <ul class="list-group list-group-flush pt-4 text-center">
-                            <li class="list-group-item">Laptop Max Loudness
+                            <li class="list-group-item">Fans Loudness
                                 <span class="float-right" data-toggle="tooltip" data-placement="top"
                                       title="Maximum noise produced by the fans laptop with CPU/GPU running at high rate clock."><img
                                         src="{{asset('storage') . '/' . 'images/info.png'}}" alt="info"></span>
@@ -280,9 +293,9 @@
                                 @elseif ($laptop->max_noise == 0)
                                     We don't have such information about this laptop.
                                 @elseif ($laptop->max_noise > 35 && $laptop->max_noise < 50)
-                                    Start to feel something! At this level noise is audible and long session could result in uncomfortable session.
+                                    Start to feel something! At this level fan noise start to be cause of distraction for you and people around.
                                 @else
-                                    Loud! Over 50db noise start to be cause of distraction. In case of long sessions a pair of headphone is mandatory.
+                                    Loud! Over 50db fan noise start to be cause of discomfort. In this case a pair of headphone is mandatory.
                                 @endif
                             </li>
                         </ul>
@@ -300,7 +313,13 @@
                     <ul class="list-group list-group-flush pt-4 text-center">
 
                         <li class="list-group-item">Network</li>
-                        <li class="list-group-item list-group-item-dark font-weight-300">{{$laptop->network}}</li>
+                        <li class="list-group-item list-group-item-dark font-weight-300">
+                            @if($laptop->network)
+                            {{$laptop->network}}
+                            @else
+                            We don't have such information about this laptop.
+                            @endif
+                        </li>
                     </ul>
 
                 </div>

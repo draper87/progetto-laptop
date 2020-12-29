@@ -25,14 +25,14 @@
         //display: flex;
         //flex-direction: column;
         //justify-content: center;
-        width: 65%;
+        width: 48%;
         //.first-row {
         //    display: flex;
         //    justify-content: space-between;
         //}
     }
     #form-right {
-        width: 30%;
+        width: 38%;
     }
 }
 // sezione filter
@@ -51,8 +51,31 @@
     .filter-box {
         text-align: center;
         width: 49%;
-        > span {
+        div > span {
             width: 50% !important;
+        }
+        .select2-selection--single {
+            border: 1px solid #00ba94 !important;
+            background-color: #00ba94 !important;
+        }
+        .select2-selection--single:focus {
+            outline: none;
+        }
+        .select2-selection__placeholder {
+            color: white !important;
+        }
+        .select2-selection__arrow {
+            b {
+                border-color: white transparent transparent transparent !important;
+            }
+        }
+        .select2-selection__rendered {
+            color: white !important;
+        }
+        .select2-selection__clear {
+            span {
+                color: white !important;
+            }
         }
     }
 }
@@ -21150,9 +21173,25 @@ section {
             .w-75 {
                 width: 100% !important;
             }
+            .select2-container {
+                width: calc(100% - 37px) !important;
+            }
         }
         #form-right {
             width: 100% !important;
+        }
+    }
+    #filters {
+        .morefilter {
+           display: block;
+            .filter-box {
+                width: auto;
+                padding-top: 1.5rem;
+                padding-bottom: 1rem;
+                div > span {
+                    width: auto !important;
+                }
+            }
         }
     }
     .box-product {
@@ -21178,5 +21217,12 @@ section {
 @media (min-width: 768px) and (max-width: 992px) {
     .laptop-img {
         height: 500px !important;
+    }
+}
+@media (min-width: 993px) and (max-width: 1199px) {
+    .form-container {
+        #form-left {
+            width: 54%;
+        }
     }
 }

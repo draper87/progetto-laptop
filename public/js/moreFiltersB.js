@@ -4,9 +4,9 @@ $(document).ready(function () {
     const $laptopTemperature = $('#laptopTemperature').find('input[type="range"]');
     const $tooltipLaptopTemperature = $('#range-tooltip-temperature');
     const sliderStatesLaptopTemperature = [
-        {name: "low", tooltip: "At this temperature the laptop should feel comfortable if lapped on your knee.", range: _.range(30, 40) },
-        {name: "med", tooltip: "Start to feel hot! Long session with CPU running high could result in uncomfortable feeling with the laptop lapped on your knee.", range: _.range(41, 50)},
-        {name: "high", tooltip: "Burning!! Above this temperature even laptop's keyboard could start to feel uncomfortable when pressed.", range: [51, 65] },
+        {name: "low", tooltip: "At this temperature laptop does not cause any discomfort if placed on your lap.", range: _.range(30, 40) },
+        {name: "med", tooltip: "Start to feel hot! Placing the notebook on your lap for a prolonged period of time may cause you discomfort.", range: _.range(41, 50)},
+        {name: "high", tooltip: "Burning! At this temperature even laptop's keyboard may result in causing discomfort at your finger.", range: [51, 65] },
     ];
     var currentStateLaptopTemperature;
     var $handleLaptopTemperature;

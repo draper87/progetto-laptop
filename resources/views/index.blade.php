@@ -13,15 +13,15 @@
                 <div class="row align-items-center">
                     <div class="col-lg-12">
                         <h1 class="page-header-title text-center font-weight-bold">Find your best laptop</h1>
-                        <p class="page-header-text mb-5 text-center">Welcome to Laptop Easy, a simple yet powerful search engine to find out the best laptop according to your needs, whether they be for gaming, business or content creation.</p>
+                        <p class="page-header-text mb-4 text-center">Welcome to Laptop Easy, a simple yet powerful search engine to find out the best laptop according to your needs, whether they be gaming, business or content creation.</p>
 
                         {{-- Sezione relativa al form --}}
                         <form>
 
                             <div class="form-container">
-                                <div id="form-left">
+                                <div id="form-left" class="pt-3">
 
-                                    <div class="w-75 mb-2 pt-3 clearfix better">
+                                    <div class="mb-2 pt-5 clearfix better">
                                         <span class="float-right pl-4 pr-2 font-weight-bold">and better
                                             <span class="float-none"
                                                   data-toggle="tooltip"
@@ -34,7 +34,7 @@
                                         </span>
                                     </div>
 
-                                    <div class="w-75 mb-3">
+                                    <div class="mb-3">
                                         <span><img class="tile-img" src="{{asset('storage') . '/' . 'images/cores.svg'}}" alt="cores"></span>
 
                                         <select class="w-30 js-basic-single-cpu" name="cpu" id="cpu">
@@ -57,7 +57,7 @@
 
                                     </div>
 
-                                    <div class="w-75 mb-3">
+                                    <div class="mb-3">
                                         <span><img class="tile-img" src="{{asset('storage') . '/' . 'images/003-ram.svg'}}" alt="ram"></span>
 
                                         <select class="w-40 js-basic-multiple-ram" name="ram_memory" id="ram_memory">
@@ -84,7 +84,7 @@
 
                                     </div>
 
-                                    <div class="w-75 mb-3">
+                                    <div class="mb-3">
 
                                         <span><img class="tile-img" src="{{asset('storage') . '/' . 'images/chassis.svg'}}" alt="chassis"></span>
 
@@ -100,7 +100,7 @@
 
                                     </div>
 
-                                    <div class="w-75 mb-3">
+                                    <div class="mb-3">
 
                                         <span><img class="tile-img" src="{{asset('storage') . '/' . 'images/gpu.svg'}}" alt="gpu"></span>
 
@@ -117,21 +117,21 @@
                                     </div>
 
                                 </div>
-                                <div id="form-right" class="">
+                                <div id="form-right" class="card p-5">
 
                                     <div class="mb-5 text-center">
-                                        <h4 class="text-center text-white">Display size</h4>
+                                        <h4 class="text-center">Display size</h4>
 
                                         <div id="sliderDisplay" ></div>
                                     </div>
 
                                     <div class="mb-5">
-                                        <h4 class="text-center text-white">Weight</h4>
+                                        <h4 class="text-center">Weight</h4>
                                         <div id="sliderWeight"></div>
                                     </div>
 
                                     <div class="">
-                                        <h4 class="text-center text-white">Price</h4>
+                                        <h4 class="text-center">Price</h4>
                                         <div id="sliderPrice"></div>
                                     </div>
 
@@ -140,29 +140,48 @@
                             </div>
 
                             <div id="filters" class="mt-5 card">
-{{--                                <span>Per-key RGB</span>--}}
+{{--                                <span>Backlit keyboard</span>--}}
 
                                     <div class="card-header">
-                                        <span>More Filters</span>
+                                        <span class="font-weight-bold">More Filters</span>
                                     </div>
 
                                     <div class="morefilter card-body-show">
 
                                         <div class="filter-box">
-                                            <select class="js-basic-single-brand" name="brand" id="brand">
-                                                <option></option>
-                                                @php
-                                                    foreach ($laptops as $laptop){
-                                                        $array_brands[] = $laptop->brand;
-                                                        $array_unique_brands = array_unique($array_brands);
-                                                    }
 
-                                                    sort($array_unique_brands);
-                                                @endphp
-                                                @foreach ($array_unique_brands as $brand)
-                                                    <option value="{{ $brand }}">{{ $brand }}</option>
-                                                @endforeach
-                                            </select>
+                                            <div>
+                                                <span><img class="tile-img" src="{{asset('storage') . '/' . 'images/brand.svg'}}" alt="ram"></span>
+
+                                                <select class="js-basic-single-brand" name="brand" id="brand">
+                                                    <option></option>
+                                                    @php
+                                                        foreach ($laptops as $laptop){
+                                                            $array_brands[] = $laptop->brand;
+                                                            $array_unique_brands = array_unique($array_brands);
+                                                        }
+
+                                                        sort($array_unique_brands);
+                                                    @endphp
+                                                    @foreach ($array_unique_brands as $brand)
+                                                        <option value="{{ $brand }}">{{ $brand }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+
+                                            <div class="mt-2">
+                                                <span><img class="tile-img" src="{{asset('storage') . '/' . 'images/keyboard.svg'}}" alt="ram"></span>
+
+                                                <select class="js-basic-single-keyboard" name="keyboard" id="keyboard">
+                                                    <option></option>
+                                                    <option value="nolight">No Backlit</option>
+                                                    <option value="whitelit">White Backlit</option>
+                                                    <option value="rgblight">RGB Backlit</option>
+                                                    <option value="rgblight">Per-key RGB Backlit</option>
+                                                </select>
+                                            </div>
+
+
                                         </div>
 
                                         <div class="filter-box moreSlider float-right pr-2">
