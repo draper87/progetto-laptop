@@ -12,7 +12,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-12 text-center pb-2">
-                        <h1 class="page-header-title">{{$laptop->name}}</h1>
+                        <h1 class="page-header-title font-weight-bold">{{$laptop->name}}</h1>
                     </div>
                 </div>
             </div>
@@ -33,39 +33,44 @@
         {{--        Contenuto         --}}
         <div class="container">
 
-{{--            <div><a href="{{route('laptop.edit', $laptop)}}">MODIFICA</a></div>--}}
-
             <div class="box-product mb-3">
 
-                <div class="card w-100 mb-2 lift">
+                <div class="card description mb-2 lift">
                     <h5 class="card-header">Description</h5>
                     <div class="card-body-show">
-                        <span class="card-text">The {{$laptop->name}} comes with {{$laptop->ram_memory}}Gb of Ram, a {{$laptop->display_size}}" display and its chassis is made of</span>
+                        <span class="card-text">The {{$laptop->name}} comes with {{$laptop->ram_memory}}Gb of Ram, a {{$laptop->display_size}}" display and its chassis is made</span>
                         @if($laptop->material == 'plastic')
-                        <span> plastic.</span>
+                            <span class="font-weight-bold"> of plastic.</span>
                         @elseif($laptop->material == 'mixed')
-                        <span> plastic and aluminum.</span>
+                            <span class="font-weight-bold"> of plastic and aluminum.</span>
                         @elseif($laptop->material == 'aluminum')
-                        <span> aluminum.</span>
+                            <span class="font-weight-bold"> entirely of aluminum.</span>
                         @else
-                        <span> magnesium.</span>
+                            <span class="font-weight-bold"> entirely of magnesium.</span>
                         @endif
                         @if($laptop->videocard->score > 5000 && $laptop->videocard->score < 10000)
-                        <span> It comes with a {{$laptop->videocard_name}}, a videocard suitable for gaming, although expected to play at medium-high settings with recent videogames in FHD.</span>
+                            <span> It comes with a {{$laptop->videocard_name}}, a GPU suitable for gaming, although <span
+                                    class="font-weight-bold">expected to play at medium-high settings</span> with recent videogames in FHD.</span>
                         @elseif ($laptop->videocard->score > 10000)
-                        <span> The {{$laptop->videocard_name}} it's a good choice for gaming, expect to play at ultra settings with recent videogames in FHD.</span>
+                            <span> The {{$laptop->videocard_name}} it's a good choice for gaming, <span
+                                    class="font-weight-bold">expect to play at ultra settings</span> with recent videogames in FHD.</span>
                         @else ($laptop->videocard->score > 10000)
-                        <span> Not a very good choice for gaming, expect to play at low settings with recent videogames.</span>
+                            <span> Not a very good choice for gaming, <span class="font-weight-bold">expect to play at low settings</span> with recent videogames.</span>
                         @endif
-                        @if($laptop->weight < 2)
-                        <span> E un portatile molto leggero, potete portarvelo tranquillamente con voi.</span>
-                        @elseif ($laptop->weight > 4)
-                        <span> Dato il peso considerevole consideratelo un desktop replacement.</span>
+                        @if($laptop->weight < 1.5)
+                            <span> Very <span class="font-weight-bold">lightweight</span> laptop, the best option in case you always need to bring it with you.</span>
+                        @elseif ($laptop->weight > 3.5)
+                            <span> Due to it's weight consider this laptop as a desktop replacement.</span>
                         @endif
                         @if($laptop->max_temp > 60)
-                        <span> Lunghe sessioni di gioco porteranno il laptop a scaldarsi in modo eccessivo.</span>
+                            <span> This laptop <span class="font-weight-bold">tend to overheat</span> considerably during gaming session or heavy video editing, consider it before buying.</span>
                         @endif
                     </div>
+                </div>
+
+                <div class="card amazon_logo mb-2 lift">
+                    <h5 class="card-header">Buy on Amazon</h5>
+                    <a href="#"><img src="{{asset('storage') . '/' . 'images/amazon.png'}}" alt="amazon_logo"></a>
                 </div>
 
                 <div class="left-box card">

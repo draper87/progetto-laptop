@@ -2,7 +2,21 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    .description {
+        width: 64%;
+    }
+    .amazon_logo {
+        .card-header {
+            justify-content: center;
+        }
+        width: 33%;
+        img {
+            width: 100%;
+            padding: 1rem;
+        }
+    }
     .card-body-show {
+        font-size: 1.15rem;
         -webkit-box-flex: 1;
         flex: 1 1 auto;
         min-height: 1px;
@@ -21,7 +35,6 @@
         }
     }
     .left-box {
-        //border: 1px solid lightgray;
         width: 64%;
         img {
             display: block;
@@ -30,10 +43,7 @@
         }
     }
     .right-box {
-        //border: 1px solid lightgray;
-        //border-radius: 5px;
         width: 33%;
-        //font-size: 0.8rem !important;
         .box {
             width: 48%;
             .box-image {

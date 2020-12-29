@@ -99,7 +99,7 @@ class LaptopController extends Controller
 
         // restituisco solamente i risultati con il laptop temperature selezionato
         if ($laptop_max_temperature = $request->get('laptopTemperature')) {
-            $queryLaptop->where('max_temp', '<=' , $laptop_max_temperature);
+            $queryLaptop->whereBetween('max_temp', [1, $laptop_max_temperature]);
         }
 
         // restituisco solamente i risultati con il brand selezionato
