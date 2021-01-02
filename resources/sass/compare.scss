@@ -13,6 +13,9 @@
         img {
             display: block;
             width: 100%;
+            &:hover {
+                filter: grayscale(1);
+            }
         }
     }
 }
@@ -44,5 +47,11 @@
                 }
             }
         }
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1350px !important;
     }
 }

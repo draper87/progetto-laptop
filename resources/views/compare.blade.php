@@ -36,14 +36,20 @@
             <div class="compare-image">
                 <div class="vuoto compare-image-box"></div>
                 <div class="compare-image-box">
-                    <img src="{{asset('storage') . '/' . $laptop1->image_path}}" alt="laptop1">
+                    <a href="{{route('show', $laptop1)}}">
+                        <img src="{{asset('storage') . '/' . $laptop1->image_path}}" alt="laptop1">
+                    </a>
                 </div>
                 <div class="compare-image-box">
-                    <img src="{{asset('storage') . '/' . $laptop2->image_path}}" alt="laptop2">
+                    <a href="{{route('show', $laptop2)}}">
+                        <img src="{{asset('storage') . '/' . $laptop2->image_path}}" alt="laptop2">
+                    </a>
                 </div>
                 @if($laptop3)
                 <div class="compare-image-box">
-                    <img src="{{asset('storage') . '/' . $laptop3->image_path}}" alt="laptop3">
+                    <a href="{{route('show', $laptop3)}}">
+                        <img src="{{asset('storage') . '/' . $laptop3->image_path}}" alt="laptop3">
+                    </a>
                 </div>
                 @endif
             </div>
