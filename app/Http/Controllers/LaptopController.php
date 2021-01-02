@@ -13,12 +13,10 @@ class LaptopController extends Controller
     {
 
         $laptops = Laptop::all();
-        $laptop1 = Laptop::all()->first();
-        $laptop2 = Laptop::all()->last();
         $videocards = Videocard::query()->orderBy('name', 'asc')->get();
         $cpus = Cpu::all();
 
-        return view('index', compact('laptops', 'videocards', 'cpus', 'laptop1', 'laptop2'));
+        return view('index', compact('laptops', 'videocards', 'cpus'));
     }
 
     public function show(Laptop $laptop)

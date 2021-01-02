@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     // sezione compare Products
 
+
     // dichiaro array dove pushare id,url immagine e nome del laptop da comparare
     let ids = [];
     let laptops_Image = [];
@@ -92,7 +93,7 @@ $(document).ready(function () {
     let laptopName;
     $(document).on('click', '.compare-add-button',
         function() {
-            if (localStorageIds.length < 3) {
+            if (ids.length < 3) {
                 laptopId = $(this).data('id');
                 laptopImage = $(this).siblings('#card-clickable').find('.card-img-top').attr('src');
                 laptopName = $(this).siblings('#card-clickable').find('#laptopName').text();
