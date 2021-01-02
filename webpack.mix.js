@@ -15,6 +15,7 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/show.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/slider.scss', 'public/css')
+    .sass('resources/sass/compare.scss', 'public/css')
     .sass('resources/sass/show.scss', 'public/css');
 
 

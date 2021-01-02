@@ -9,6 +9,15 @@
         transform: translate(-50%, -50%);
     }
 }
+// I tag a devono ereditare il colore
+.laptop {
+    a {
+        color: inherit;
+        &:hover {
+            color: inherit;
+        }
+    }
+}
 
 // paginazione
 #pagina {
@@ -116,7 +125,7 @@
     width: 32px;
     height: 32px;
 }
-// test
+// test - da cancellare?
 .opacity {
     opacity: 0.9;
 }
@@ -124,6 +133,88 @@
 .and-better {
     display: flex;
     justify-content: flex-end;
+}
+// sezione compare products
+.compare-add-button {
+    display: none;
+    z-index: 1000;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    &:hover {
+        border: 1px solid #00ba94;
+        color: #00ba94;
+        background-color: white;
+    }
+}
+.laptop:hover .compare-add-button {
+    display: block;
+}
+#compare-view {
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 170px;
+    .compare-view-box {
+        height: 100%;
+        padding: 1rem;
+        h5 {
+            max-width: 175px;
+            color: white;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        img {
+            //display: block;
+            width: auto;
+            height: 75%;
+            &:hover {
+                cursor: pointer;
+                filter: blur(2px) grayscale(1);
+
+            }
+        }
+    }
+    .compare-view-button {
+        flex-grow: 5;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 3rem;
+        span {
+            border: 1px solid white;
+            padding: 0.8rem 2.5rem;
+            color: white;
+            cursor: pointer;
+            &:hover {
+                border: 1px solid black;
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+    .compare-view-close-button {
+        img {
+            cursor: pointer;
+            padding-right: 0.5rem;
+            padding-top: 0.5rem;
+            width: 35px;
+            height: 35px;
+            &:hover {
+                filter: hue-rotate(200deg);
+            }
+        }
+    }
+}
+.compare-hide {
+    display: none;
+}
+.compare-show {
+    display: flex;
 }
 
 
@@ -10169,7 +10260,7 @@ button.bg-danger-soft:focus {
 }
 
 .border-left {
-    border-left: 1px solid #e3e6ec !important;
+    border-left: 1px solid white !important;
 }
 
 .border-0 {

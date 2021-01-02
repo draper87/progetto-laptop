@@ -10,12 +10,14 @@
 
         gtag('config', 'G-1HSEB1TB9C');
     </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="The best search-engine online that allows to find the best laptop according to your needs." />
     <meta name="author" content="Oliver Benoit" />
-    <title>Laptop Easy</title>
+    @yield('title')
     <link rel="stylesheet" href="css/lc_switch.css">
     <link rel="stylesheet" href="css/nouislider.min.css">
     <link rel="stylesheet" href="css/slider.css">
@@ -53,6 +55,7 @@
 <script src="{{ asset('js/underscore-min.js') }}"></script>
 <script src="{{ asset('js/moreFiltersB.js') }}"></script>
 <script src="{{ asset('js/show.js') }}"></script>
+<script src="{{ asset('js/compare.js') }}"></script>
 
 </body>
 </html>

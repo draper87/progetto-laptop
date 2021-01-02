@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    Laptop Easy
+    <title>{{$laptop->name}}</title>
 @endsection
 
 

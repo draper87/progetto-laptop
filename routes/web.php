@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/compare', 'LaptopController@compareProducts')->name('compare');
+
 Route::get('/', 'LaptopController@index')->name('index');
 Route::get('{laptop}', 'LaptopController@show');
+
+
 
 Route::middleware('auth.basic')->resource('laptop','LaptopCrudController');
 

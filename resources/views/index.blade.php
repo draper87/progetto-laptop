@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    Laptop Easy
+    <title>Laptop Easy</title>
 @endsection
 
 
@@ -246,7 +246,6 @@
     <section id="show" class="bg-white py-5">
         <div class="container">
 
-
                 <div class="lista row text-center">
                 </div>
 
@@ -269,34 +268,62 @@
         </div>
     </section>
 
+    <div id="compare-view" class="compare-hide">
+
+        {{--    Viene popolato da Jquery    --}}
+
+{{--        <div class="compare-view-box text-center" data-id="laptopId">--}}
+{{--            <img src="{{asset('storage') . '/' . $laptop->image_path}}" alt="test">--}}
+{{--            <h5>laptopName</h5>--}}
+{{--        </div>--}}
+
+        <div class="compare-view-button">
+            <span id="compare-button">Compare</span>
+        </div>
+        <div class="compare-view-close-button">
+            <img src="{{asset('storage') . '/' . 'images/close.svg'}}" alt="close-button">
+        </div>
+    </div>
+
 {{--    <hr class="m-0" />--}}
 @endsection
 
 {{--          Sezione relativa ad Handlebars             --}}
 <script id="entry-template" type="text/x-handlebars-template">
-    <div class="laptop col-lg-4 mb-5 mb-lg-5">
-        <a class="card lift h-100" href="{{route('index')}}/@{{id}}" target="_blank" rel="noopener noreferrer"><div class="card-flag card-flag-green card-flag-top-right">@{{ price }}$</div>
+<div class="laptop col-lg-4 mb-5 mb-lg-5">
+    <div class="card lift h-100">
+        <div class="card-flag card-flag-green card-flag-top-right">@{{ price }}$</div>
+        <div class="card-flag card-flag-green card-flag-top-left compare-add-button" data-id="@{{id}}">Add to compare</div>
+        <a href="{{route('index')}}/@{{id}}" href="{{route('index')}}/@{{id}}" target="_blank" rel="noopener noreferrer" class="text-decoration-none" id="card-clickable">
             <div class="laptop-img">
-            <img class="card-img-top" src="{{asset('storage')}}/@{{image_path}}" alt="@{{image_path}}">
+                <img class="card-img-top" src="{{asset('storage')}}/@{{image_path}}" alt="@{{image_path}}">
             </div>
             <div class="card-body">
                 <h3 class="text-success mb-0">@{{brand}}</h3>
-                <div class="small text-gray-800 font-weight-500">@{{name}}</div>
+                <div id="laptopName" class="small text-gray-800 font-weight-500">@{{name}}</div>
                 <div class="small text-gray-500">GPU: @{{videocard_name}}</div>
                 <div class="small text-gray-500">CPU: @{{cpu_name}}</div>
-<!--                <div class="small text-gray-500">Display: @{{display_size}}"</div>-->
-<!--                <div class="small text-gray-500">Ram: @{{ram_memory}}Gb</div>-->
                 <div class="tile pt-3 pb-2">
-                    <span class="single-tile"><img class="tile-img" src="{{asset('storage') . '/' . 'images/size.svg'}}" alt="screen_size"> @{{display_size}}"</span>
-                    <span class="single-tile"><img class="tile-img" src="{{asset('storage') . '/' . 'images/003-ram.svg'}}" alt="ram"> @{{ram_memory}}Gb</span>
-                    <span class="single-tile"><img class="tile-img" src="{{asset('storage') . '/' . 'images/weight.svg'}}" alt="ram"> @{{weight}}</span>
+                    <span class="single-tile"><img class="tile-img" src="{{asset('storage') . '/' . 'images/size.svg'}}"
+                                                   alt="screen_size"> @{{display_size}}"</span>
+                    <span class="single-tile"><img class="tile-img"
+                                                   src="{{asset('storage') . '/' . 'images/003-ram.svg'}}" alt="ram"> @{{ram_memory}}Gb</span>
+                    <span class="single-tile"><img class="tile-img"
+                                                   src="{{asset('storage') . '/' . 'images/weight.svg'}}" alt="ram"> @{{weight}}</span>
                 </div>
             </div>
-<!--            <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">-->
-<!--                <div class="small text-gray-500">View Full Specs</div>-->
-<!--                <div class="small text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div></div></a>-->
+        </a>
+{{--            <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">--}}
+{{--                <a href="{{route('index')}}/@{{id}}" href="{{route('index')}}/@{{id}}" target="_blank" rel="noopener noreferrer" class="small text-gray-500">View Full Specs</a>--}}
+{{--                <div class="small text-gray-500">--}}
+{{--                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>--}}
+{{--                    </svg>--}}
+{{--                </div>--}}
+{{--            </div>--}}
     </div>
+</div>
 </script>
+
 
 
 
