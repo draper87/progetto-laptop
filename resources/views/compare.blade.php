@@ -81,42 +81,131 @@
                     <ul>
                         <li>{{$laptop1->name}}</li>
                         <li>{{$laptop1->brand}}</li>
-                        <li>{{$laptop1->material}}</li>
-                        <li>{{$laptop1->ram_memory}}Gb</li>
+                        <li>
+                            @if($laptop1->material == 'mixed')
+                                Plastic & Aluminum
+                            @else
+                                {{$laptop1->material}}
+                            @endif
+                        </li>
+
+                        @if($laptop1->ram_memory >= $laptop2->ram_memory && $laptop1->ram_memory >= $laptop3->ram_memory)
+                            <li class="highlight">{{$laptop1->ram_memory}}Gb</li>
+                        @else
+                            <li>{{$laptop1->ram_memory}}Gb</li>
+                        @endif
+
                         <li>{{$laptop1->network}}</li>
                         <li>{{$laptop1->connections}}</li>
                         <li>{{$laptop1->cpu_name}}</li>
-                        <li>{{$laptop1->cpu->score}}</li>
+
+                        @if($laptop1->cpu->score >= $laptop2->cpu->score && $laptop1->cpu->score >= $laptop3->cpu->score)
+                            <li class="highlight">{{$laptop1->cpu->score}}</li>
+                        @else
+                            <li>{{$laptop1->cpu->score}}</li>
+                        @endif
+
                         <li>{{$laptop1->display_size}}"</li>
                         <li>{{$laptop1->storage_size}}Gb</li>
                         <li>{{$laptop1->videocard_name}}</li>
-                        <li>{{$laptop1->videocard->score}}</li>
-                        <li>{{$laptop1->battery}}Wh</li>
+
+                        @if($laptop1->videocard->score >= $laptop2->videocard->score && $laptop1->videocard->score >= $laptop3->videocard->score)
+                            <li class="highlight">{{$laptop1->videocard->score}}</li>
+                        @else
+                            <li>{{$laptop1->videocard->score}}</li>
+                        @endif
+
+                        @if($laptop1->battery >= $laptop2->battery && $laptop1->battery >= $laptop3->battery)
+                            <li class="highlight">{{$laptop1->battery}}Wh</li>
+                        @else
+                            <li>{{$laptop1->battery}}Wh</li>
+                        @endif
+
                         <li>{{$laptop1->weight}}Kg</li>
-                        <li>{{$laptop1->max_temp}}C°</li>
-                        <li>{{$laptop1->max_noise}}db</li>
-                        <li>{{$laptop1->price}}$</li>
+
+                        @if($laptop1->max_temp <= $laptop2->max_temp && $laptop1->max_temp <= $laptop3->max_temp && $laptop1->max_temp != 0)
+                            <li class="highlight">{{$laptop1->max_temp}}C°</li>
+                        @else
+                            <li>{{$laptop1->max_temp}}C°</li>
+                        @endif
+
+                        @if($laptop1->max_noise <= $laptop2->max_noise && $laptop1->max_noise <= $laptop3->max_noise && $laptop1->max_noise != 0)
+                            <li class="highlight">{{$laptop1->max_noise}}db</li>
+                        @else
+                            <li>{{$laptop1->max_noise}}db</li>
+                        @endif
+
+                        @if($laptop1->price <= $laptop2->price && $laptop1->price <= $laptop3->price && $laptop1->price != 0)
+                            <li class="highlight">{{$laptop1->price}}$</li>
+                        @else
+                            <li>{{$laptop1->price}}$</li>
+                        @endif
+
                     </ul>
                 </div>
                 <div class="compare-specs-box border-left">
                     <ul>
                         <li>{{$laptop2->name}}</li>
                         <li>{{$laptop2->brand}}</li>
-                        <li>{{$laptop2->material}}</li>
-                        <li>{{$laptop2->ram_memory}}Gb</li>
+                        <li>
+                            @if($laptop2->material == 'mixed')
+                                Plastic & Aluminum
+                            @else
+                                {{$laptop2->material}}
+                            @endif
+                        </li>
+
+                        @if($laptop2->ram_memory >= $laptop1->ram_memory && $laptop2->ram_memory >= $laptop3->ram_memory)
+                            <li class="highlight">{{$laptop2->ram_memory}}Gb</li>
+                        @else
+                            <li>{{$laptop1->ram_memory}}Gb</li>
+                        @endif
+
                         <li>{{$laptop2->network}}</li>
                         <li>{{$laptop2->connections}}</li>
                         <li>{{$laptop2->cpu_name}}</li>
-                        <li>{{$laptop2->cpu->score}}</li>
+
+                        @if($laptop2->cpu->score >= $laptop1->cpu->score && $laptop2->cpu->score >= $laptop3->cpu->score)
+                            <li class="highlight">{{$laptop2->cpu->score}}</li>
+                        @else
+                            <li>{{$laptop2->cpu->score}}</li>
+                        @endif
+
                         <li>{{$laptop2->display_size}}"</li>
                         <li>{{$laptop2->storage_size}}Gb</li>
                         <li>{{$laptop2->videocard_name}}</li>
-                        <li>{{$laptop2->videocard->score}}</li>
-                        <li>{{$laptop2->battery}}Wh</li>
+
+                        @if($laptop2->videocard->score >= $laptop1->videocard->score && $laptop2->videocard->score >= $laptop3->videocard->score)
+                            <li class="highlight">{{$laptop2->videocard->score}}</li>
+                        @else
+                            <li>{{$laptop2->videocard->score}}</li>
+                        @endif
+
+                        @if($laptop2->battery >= $laptop1->battery && $laptop2->battery >= $laptop3->battery)
+                            <li class="highlight">{{$laptop2->battery}}Wh</li>
+                        @else
+                            <li>{{$laptop2->battery}}Wh</li>
+                        @endif
+
                         <li>{{$laptop2->weight}}Kg</li>
-                        <li>{{$laptop2->max_temp}}C°</li>
-                        <li>{{$laptop2->max_noise}}db</li>
-                        <li>{{$laptop2->price}}$</li>
+
+                        @if($laptop2->max_temp <= $laptop1->max_temp && $laptop2->max_temp <= $laptop3->max_temp && $laptop2->max_temp != 0)
+                            <li class="highlight">{{$laptop2->max_temp}}C°</li>
+                        @else
+                            <li>{{$laptop2->max_temp}}C°</li>
+                        @endif
+
+                        @if($laptop2->max_noise <= $laptop1->max_noise && $laptop2->max_noise <= $laptop3->max_noise && $laptop2->max_noise != 0)
+                            <li class="highlight">{{$laptop2->max_noise}}db</li>
+                        @else
+                            <li>{{$laptop2->max_noise}}db</li>
+                        @endif
+
+                        @if($laptop2->price <= $laptop1->price && $laptop2->price <= $laptop3->price && $laptop2->price != 0)
+                            <li class="highlight">{{$laptop2->price}}$</li>
+                        @else
+                            <li>{{$laptop2->price}}$</li>
+                        @endif
                     </ul>
                 </div>
 
@@ -125,21 +214,65 @@
                     <ul>
                         <li>{{$laptop3->name}}</li>
                         <li>{{$laptop3->brand}}</li>
-                        <li>{{$laptop3->material}}</li>
-                        <li>{{$laptop3->ram_memory}}Gb</li>
+                        <li>
+                            @if($laptop3->material == 'mixed')
+                                Plastic & Aluminum
+                            @else
+                                {{$laptop3->material}}
+                            @endif
+                        </li>
+
+                        @if($laptop3->ram_memory >= $laptop1->ram_memory && $laptop3->ram_memory >= $laptop2->ram_memory)
+                            <li class="highlight">{{$laptop3->ram_memory}}Gb</li>
+                        @else
+                            <li>{{$laptop3->ram_memory}}Gb</li>
+                        @endif
+
                         <li>{{$laptop3->network}}</li>
                         <li>{{$laptop3->connections}}</li>
                         <li>{{$laptop3->cpu_name}}</li>
-                        <li>{{$laptop3->cpu->score}}</li>
+
+                        @if($laptop3->cpu->score >= $laptop1->cpu->score && $laptop3->cpu->score >= $laptop2->cpu->score)
+                            <li class="highlight">{{$laptop3->cpu->score}}</li>
+                        @else
+                            <li>{{$laptop3->cpu->score}}</li>
+                        @endif
+
                         <li>{{$laptop3->display_size}}"</li>
                         <li>{{$laptop3->storage_size}}Gb</li>
                         <li>{{$laptop3->videocard_name}}</li>
-                        <li>{{$laptop3->videocard->score}}</li>
-                        <li>{{$laptop3->battery}}Wh</li>
+
+                        @if($laptop3->videocard->score >= $laptop1->videocard->score && $laptop3->videocard->score >= $laptop2->videocard->score)
+                            <li class="highlight">{{$laptop3->videocard->score}}</li>
+                        @else
+                            <li>{{$laptop3->videocard->score}}</li>
+                        @endif
+
+                        @if($laptop3->battery >= $laptop1->battery && $laptop3->battery >= $laptop2->battery)
+                            <li class="highlight">{{$laptop3->battery}}Wh</li>
+                        @else
+                            <li>{{$laptop3->battery}}Wh</li>
+                        @endif
+
                         <li>{{$laptop3->weight}}Kg</li>
-                        <li>{{$laptop3->max_temp}}C°</li>
-                        <li>{{$laptop3->max_noise}}db</li>
-                        <li>{{$laptop3->price}}$</li>
+
+                        @if($laptop3->max_temp <= $laptop1->max_temp && $laptop3->max_temp <= $laptop2->max_temp && $laptop3->max_temp != 0)
+                            <li class="highlight">{{$laptop3->max_temp}}C°</li>
+                        @else
+                            <li>{{$laptop3->max_temp}}C°</li>
+                        @endif
+
+                        @if($laptop3->max_noise <= $laptop1->max_noise && $laptop3->max_noise <= $laptop2->max_noise && $laptop3->max_noise != 0)
+                            <li class="highlight">{{$laptop3->max_noise}}db</li>
+                        @else
+                            <li>{{$laptop3->max_noise}}db</li>
+                        @endif
+
+                        @if($laptop3->price <= $laptop1->price && $laptop3->price <= $laptop2->price && $laptop3->price != 0)
+                            <li class="highlight">{{$laptop3->price}}$</li>
+                        @else
+                            <li>{{$laptop3->price}}$</li>
+                        @endif
                     </ul>
                 </div>
                 @endif
@@ -175,6 +308,11 @@
 @endsection
 
 <link rel="stylesheet" href="{{asset('css/compare.css')}}">
+<script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="{{ asset('js/template.js') }}"></script>
+
+
 
 
 

@@ -8,7 +8,7 @@
 .compare-image {
     display: flex;
     .compare-image-box {
-        border-bottom: 1px solid black;
+        //border-bottom: 1px solid black;
         width: 25%;
         img {
             display: block;
@@ -22,6 +22,9 @@
 .compare-specs {
     display: flex;
     .compare-specs-box {
+        .highlight {
+            background-color: #00ba94;
+        }
         width: 25%;
         ul {
             li {

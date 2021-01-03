@@ -21,7 +21,6 @@
     },
     "dependencies": {
         "handlebars": "^4.7.6",
-        "jquery": "^3.5.1",
         "nouislider": "^14.6.2",
         "rangeslider.js": "^2.3.3"
     }
