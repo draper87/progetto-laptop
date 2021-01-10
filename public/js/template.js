@@ -2,7 +2,9 @@
 // Enable Bootstrap tooltips via data-attributes globally
 // require('./bootstrap');
 
-$('[data-toggle="tooltip"]').tooltip();
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+})
 
 // Enable Bootstrap popovers via data-attributes globally
 $('[data-toggle="popover"]').popover();

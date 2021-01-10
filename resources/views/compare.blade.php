@@ -51,6 +51,10 @@
                         <img src="{{asset('storage') . '/' . $laptop3->image_path}}" alt="laptop3">
                     </a>
                 </div>
+                {{--          Sistemare problema del laptop3 che da errore se cerco di compare solo 2 laptop          --}}
+                @else
+
+
                 @endif
             </div>
 

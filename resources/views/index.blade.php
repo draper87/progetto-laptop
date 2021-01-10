@@ -293,7 +293,9 @@
 <div class="laptop col-lg-4 mb-5 mb-lg-5">
     <div class="card lift h-100">
         <div class="card-flag card-flag-green card-flag-top-right">@{{ price }}$</div>
-        <div class="card-flag card-flag-green card-flag-top-left compare-add-button" data-id="@{{id}}">Add to compare</div>
+        <div class="card-flag card-flag-top-left compare-add-button" data-id="@{{id}}">
+            <img src="{{asset('storage') . '/' . 'images/plus.svg'}}" alt="add to compare">
+        </div>
         <a href="{{route('index')}}/@{{id}}" href="{{route('index')}}/@{{id}}" target="_blank" rel="noopener noreferrer" class="text-decoration-none" id="card-clickable">
             <div class="laptop-img">
                 <img class="card-img-top" src="{{asset('storage')}}/@{{image_path}}" alt="@{{image_path}}">
