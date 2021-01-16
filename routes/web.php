@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route relative al contact form
+Route::get('/contact', 'ContactController@contact')->name('contact');
+Route::post('/contact', 'ContactController@contactPost')->name('contactPost');
+
 Route::get('/compare', 'LaptopController@compareProducts')->name('compare');
 
 Route::get('/', 'LaptopController@index')->name('index');
@@ -20,5 +24,6 @@ Route::get('{laptop}', 'LaptopController@show')->name('show');
 
 
 
+// Route relative alle crud (con login come middleware)
 Route::middleware('auth.basic')->resource('laptop','LaptopCrudController');
 
