@@ -24,7 +24,6 @@
     <link href="css/app.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-{{--    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>--}}
 </head>
 
 <body>
@@ -44,7 +43,7 @@
 </div>
 
 
-@include('partials.scripts')
+@yield('scripts')
 
 </body>
 </html>

@@ -73,6 +73,12 @@
                 </div>
             </form>
 
+            <script>
+                function onSubmit(token) {
+                    document.getElementById("contact-form").submit();
+                }
+            </script>
+
         </div>
 
 
@@ -97,14 +103,16 @@
 
 
 @endsection
-<script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
-<script src="{{ asset('js/template.js') }}"></script>
-<script src="https://www.google.com/recaptcha/api.js"></script>
-<script>
-    function onSubmit(token) {
-        document.getElementById("contact-form").submit();
-    }
-</script>
+
+@section('scripts')
+    <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
+    <script src="{{ asset('js/template.js') }}"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+@endsection
+
+
+
+
 

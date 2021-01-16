@@ -235,11 +235,15 @@
 
 @endsection
 
-<link rel="stylesheet" href="{{asset('css/compare.css')}}">
-<script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script src="{{ asset('js/template.js') }}"></script>
-<script src="{{ asset('js/compare-template.js') }}"></script>
+@section('scripts')
+    <link rel="stylesheet" href="{{asset('css/compare.css')}}">
+    <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/template.js') }}"></script>
+    <script src="{{ asset('js/compare-template.js') }}"></script>
+@endsection
+
+
 
 
 
