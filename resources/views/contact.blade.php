@@ -46,7 +46,7 @@
             @endif
 
 
-            <form method="POST" action="{{route('contactPost')}}">
+            <form method="POST" action="{{route('contactPost')}}" id="contact-form">
                 @csrf
                 <div class="form-row">
                     <div class="form-group col-md-6 {{ $errors->has('name') ? 'has-error' : '' }}">
@@ -68,7 +68,8 @@
                     <span class="text-danger">{{ $errors->first('comment') }}</span>
                 </div>
                 <div class="text-center">
-                    <button class="btn btn-primary btn-marketing mt-4" type="submit">Submit Request</button>
+                    <button class="btn btn-primary btn-marketing mt-4 g-recaptcha" data-sitekey="6LeMES8aAAAAAMEpCbJv24Kv5KgS5AcLy4zb9KH_"
+                            data-callback='onSubmit' data-action='submit' type="submit">Submit Request</button>
                 </div>
             </form>
 
@@ -100,4 +101,10 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
 <script src="{{ asset('js/template.js') }}"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+    function onSubmit(token) {
+        document.getElementById("contact-form").submit();
+    }
+</script>
 
