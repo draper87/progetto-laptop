@@ -45,6 +45,12 @@
                 </div>
             @endif
 
+            @if(session('danger'))
+                <div class="alert alert-danger">
+                    {{ session('danger') }}
+                </div>
+            @endif
+
 
             <form method="POST" action="{{route('contactPost')}}" id="contact-form">
                 @csrf
@@ -68,7 +74,7 @@
                     <span class="text-danger">{{ $errors->first('comment') }}</span>
                 </div>
                 <div class="text-center">
-                    <button class="btn btn-primary btn-marketing mt-4 g-recaptcha" data-sitekey="6LeMES8aAAAAAMEpCbJv24Kv5KgS5AcLy4zb9KH_"
+                    <button class="btn btn-primary btn-marketing mt-4 g-recaptcha" data-sitekey="6LenFy8aAAAAAD9vQhIfZx_B1mP5mpCQSghE_sC0"
                             data-callback='onSubmit' data-action='submit' type="submit">Submit Request</button>
                 </div>
             </form>

@@ -281,7 +281,7 @@
             <span id="compare-button">Compare</span>
         </div>
         <div class="compare-view-close-button">
-            <img src="{{asset('storage') . '/' . 'images/close.svg'}}" alt="close-button">
+            <img src="{{asset('storage') . '/' . 'images/cancel.svg'}}" alt="close-button">
         </div>
     </div>
 

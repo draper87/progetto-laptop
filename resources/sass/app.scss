@@ -26,19 +26,12 @@
     align-items: center;
 }
 
-// parte relativa al layout del form
+// parte relativa al layout del form con dentro le select
 .form-container {
     display: flex;
     justify-content: space-between;
     #form-left {
-        //display: flex;
-        //flex-direction: column;
-        //justify-content: center;
         width: 48%;
-        //.first-row {
-        //    display: flex;
-        //    justify-content: space-between;
-        //}
     }
     #form-right {
         width: 38%;
@@ -177,7 +170,7 @@
             padding-bottom: 0.5rem;
         }
         img {
-            //display: block;
+            border-radius: 10px;
             width: auto;
             height: 75%;
             &:hover {
@@ -213,7 +206,7 @@
             width: 35px;
             height: 35px;
             &:hover {
-                filter: hue-rotate(200deg);
+                filter: invert(1);
             }
         }
     }
@@ -223,6 +216,10 @@
 }
 .compare-show {
     display: flex;
+}
+// Z Index per il logo di Google Recaptcha nella Contact Us
+.grecaptcha-badge {
+    z-index: 100;
 }
 
 
