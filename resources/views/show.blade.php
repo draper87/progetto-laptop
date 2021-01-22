@@ -72,7 +72,7 @@
 
                 <div class="card amazon_logo mb-2 lift">
                     <h5 class="card-header">Buy on Amazon</h5>
-                    <a href="#"><img src="{{asset('storage') . '/' . 'images/amazon.png'}}" alt="amazon_logo"></a>
+                    <a href="{{$laptop->amazon_asin}}"><img src="{{asset('storage') . '/' . 'images/amazon.png'}}" alt="amazon_logo"></a>
                 </div>
 
                 <div class="left-box card">
