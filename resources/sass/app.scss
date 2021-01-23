@@ -32,6 +32,9 @@
     justify-content: space-between;
     #form-left {
         width: 48%;
+        .select2-selection__placeholder {
+            color: #006651;
+        }
     }
     #form-right {
         width: 38%;
@@ -21270,9 +21273,9 @@ section {
             .w-75 {
                 width: 100% !important;
             }
-            //.select2-container {
-            //    width: calc(100% - 37px) !important;
-            //}
+            .select2-container {
+                width: calc(100% - 37px) !important;
+            }
         }
         #form-right {
             width: 100% !important;
@@ -21289,10 +21292,19 @@ section {
                     width: auto !important;
                 }
             }
+            .moreSlider {
+                width: 100%;
+                .main {
+                    width: 100%;
+                }
+            }
         }
     }
     .box-product {
         margin-bottom: 0 !important;
+        .description, .amazon_logo {
+            width: 100%;
+        }
         .left-box {
             width: 100%;
         }
@@ -21303,6 +21315,13 @@ section {
         > .box {
             margin-top: 1rem !important;
             width: 100%;
+        }
+    }
+    .compare-add-button {
+        display: inherit;
+        img {
+            width: 42px;
+            height: 42px;
         }
     }
 }
@@ -21320,6 +21339,36 @@ section {
     .form-container {
         #form-left {
             width: 54%;
+            .select2-container {
+                width: 65% !important;
+            }
+        }
+    }
+    .laptop-img {
+        height: 355px !important;
+    }
+}
+@media (min-width: 700px) and (max-width: 885px) {
+    #compare-view {
+        .compare-view-box {
+            img {
+                height: 50%;
+            }
+            h5 {
+                max-width: 110px;
+            }
+        }
+    }
+}
+@media (max-width: 885px) {
+    #compare-view {
+        .compare-view-box {
+            img {
+                height: 50%;
+            }
+            h5 {
+                max-width: 110px;
+            }
         }
     }
 }

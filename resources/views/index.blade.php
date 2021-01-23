@@ -13,7 +13,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-12">
                         <h1 class="page-header-title text-center font-weight-bold">Find your best laptop</h1>
-                        <p class="page-header-text mb-4 text-center">Welcome to Laptop Easy, a simple yet powerful search engine to find out the best laptop according to your needs, whether they be gaming, business or content creation.</p>
+                        <p class="page-header-text mb-4 text-center">Welcome to Laptop Easy, a simple yet powerful search engine to find out the best laptop according to your needs, whether they be for gaming, business or content creation.</p>
 
                         {{-- Sezione relativa al form --}}
                         <form>
@@ -272,17 +272,13 @@
 
         {{--    Viene popolato da Jquery    --}}
 
-{{--        <div class="compare-view-box text-center" data-id="laptopId">--}}
-{{--            <img src="{{asset('storage') . '/' . $laptop->image_path}}" alt="test">--}}
-{{--            <h5>laptopName</h5>--}}
-{{--        </div>--}}
-
         <div class="compare-view-button">
             <span id="compare-button">Compare</span>
         </div>
         <div class="compare-view-close-button">
             <img src="{{asset('storage') . '/' . 'images/cancel.svg'}}" alt="close-button">
         </div>
+
     </div>
 
 {{--    <hr class="m-0" />--}}
@@ -290,7 +286,7 @@
 
 {{--          Sezione relativa ad Handlebars             --}}
 <script id="entry-template" type="text/x-handlebars-template">
-<div class="laptop col-lg-4 mb-5 mb-lg-5">
+<div class="laptop col-lg-6 col-xl-4 mb-5 mb-lg-5">
     <div class="card lift h-100">
         <div class="card-flag card-flag-green card-flag-top-right">@{{ price }}$</div>
         <div class="card-flag card-flag-top-left compare-add-button" data-id="@{{id}}">
