@@ -78,7 +78,6 @@
                         <li>Max temp</li>
                         <li>Max noise</li>
                         <li>Price</li>
-                        <li>Buy it on Amazon</li>
                     </ul>
                 </div>
                 <div class="compare-specs-box border-left">
@@ -120,6 +119,12 @@
 
                         <li>{{$laptop1->price}}$</li>
 
+                        <li>
+                            <a href="{{$laptop1->amazon_asin}}">
+                                <img src="{{asset('storage') . '/' . 'images/amazon_3.png'}}" alt="">
+                            </a>
+                        </li>
+
 
                     </ul>
                 </div>
@@ -158,6 +163,12 @@
                         <li>{{$laptop2->max_noise}}db</li>
 
                         <li>{{$laptop2->price}}$</li>
+
+                        <li>
+                            <a href="{{$laptop2->amazon_asin}}">
+                                <img src="{{asset('storage') . '/' . 'images/amazon_3.png'}}" alt="">
+                            </a>
+                        </li>
 
                     </ul>
                 </div>
@@ -200,6 +211,12 @@
                         <li>{{$laptop3->max_noise}}db</li>
 
                         <li>{{$laptop3->price}}$</li>
+
+                        <li>
+                            <a href="{{$laptop3->amazon_asin}}">
+                                <img src="{{asset('storage') . '/' . 'images/amazon_3.png'}}" alt="">
+                            </a>
+                        </li>
 
                     </ul>
                 </div>
