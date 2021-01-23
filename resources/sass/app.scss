@@ -21348,26 +21348,33 @@ section {
         height: 355px !important;
     }
 }
-@media (max-width: 700px) {
+@media (max-width: 699px) {
     #compare-view {
-        .compare-view-box {
-            img {
-                height: 40%;
-            }
-            h5 {
-                max-width: 90px;
-            }
-        }
+        height: 260px;
         .compare-view-button {
             margin-right: 0;
             justify-content: center;
             span {
-                padding: 0.8rem 1.5rem;
+                padding: 0.5rem 2.5rem;
+            }
+        }
+    }
+    .compare-show {
+        flex-direction: column;
+        .compare-view-box {
+            height: auto !important;
+            padding: 0.5rem 0.5rem 0 0.5rem !important;
+            img {
+                display: none;
+            }
+            h5 {
+                max-width: 100% !important;
+                border: 1px solid white;
             }
         }
     }
 }
-@media (max-width: 885px) {
+@media (min-width: 701px) and (max-width: 885px) {
     #compare-view {
         .compare-view-box {
             img {
