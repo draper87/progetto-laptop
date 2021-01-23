@@ -213,6 +213,9 @@
 
         {{--   Fine contenuto    --}}
 
+        {{--    Div nascosto che si attiva in modalita portrait   --}}
+
+
         <div class="svg-border-rounded text-light">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none"
                  fill="currentColor">
@@ -220,6 +223,12 @@
             </svg>
         </div>
 
+    </section>
+
+    <section>
+        <div class="container text-center flip-phone">
+            <h3>Flip your phone / tablet</h3>
+        </div>
     </section>
 
 
