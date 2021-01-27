@@ -123,7 +123,7 @@ $(document).ready(function () {
                 stampaLaptops(dataResponse);
             },
             error: function () {
-                alert('il server non funziona');
+                alert('Server is not working');
             }
         })
     }
@@ -137,6 +137,7 @@ $(document).ready(function () {
 
         for (var i = 0; i < dataResponse.data.length; i++) {
             var context = dataResponse.data[i];
+            console.log(context);
             // se non è disponibile un immagine per il laptop viene caricata quella di default
             if (context['image_path'] === null) {
                 context['image_path'] = "images/laptop.jpg";

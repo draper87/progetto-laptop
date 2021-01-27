@@ -60,7 +60,7 @@
                             <span> Not a very good choice for gaming, <span class="font-weight-bold">expect to play at low settings</span> with recent videogames.</span>
                         @endif
                         @if($laptop->weight < 1.5)
-                            <span> Very <span class="font-weight-bold">lightweight</span> laptop, the best option in case you always need to bring it with you.</span>
+                            <span> Very <span class="font-weight-bold">lightweight</span> laptop, the best option if you're looking for a device that must be carried with you all the time.</span>
                         @elseif ($laptop->weight > 3.5)
                             <span> Due to it's weight consider this laptop as a desktop replacement.</span>
                         @endif
@@ -165,7 +165,7 @@
                                      title="Weight">
                             </div>
                             <ul class="list-group list-group-flush text-center pt-2">
-                                <li class="list-group-item list-group-item-dark font-weight-200">{{$laptop->weight}}Kg</li>
+                                <li class="list-group-item list-group-item-dark font-weight-200 laptop-weight">{{$laptop->weight}}<span class="lbs-weight"></span></li>
                             </ul>
 
                         </div>
@@ -180,7 +180,7 @@
 
             <div class="box-product mb-3">
 
-                <div id="cpu-info" class="box card pt-5 lift">
+                <div id="cpu-info" class="box card pt-5">
 
                     <div class="text-center box-image">
                         <img src="{{asset('storage') . '/' . 'images/cpu.png'}}" alt="cpu">
@@ -196,7 +196,7 @@
 
                 </div>
 
-                <div id="videocard-info" class="box card pt-5 lift">
+                <div id="videocard-info" class="box card pt-5">
 
                     <div class="text-center box-image">
                         <img src="{{asset('storage') . '/' . 'images/gpu.png'}}" alt="cpu">
@@ -212,7 +212,7 @@
 
                 </div>
 
-                <div id="motherboard" class="box card pt-5 lift">
+                <div id="connections" class="box card pt-5">
 
                     <div class="text-center box-image">
                         <img src="{{asset('storage') . '/' . 'images/usb-port.png'}}">
@@ -234,14 +234,14 @@
 
             <div class="box-product">
 
-                <div id="max-temperature" class="box card pt-4 lift">
+                <div id="max-temperature" class="box card pt-4">
 
                     <div id="thermometer" class="box-image">
                         <div class="thermo-container">
                             <div class="outer-circle">
                                 <div class="middle-circle">
                                     <div class="inner-circle">
-                                        <span class="top">2</span>
+                                        <span class="top"></span>
                                         <span class="mid">{{$laptop->max_temp}}</span>
                                     </div>
                                 </div>
@@ -271,7 +271,7 @@
 
                 </div>
 
-                <div id="max-noise" class="box card pt-4 lift">
+                <div id="max-noise" class="box card pt-4">
 
                     <div class="box-image text-center box-image">
                         <img src="{{asset('storage') . '/' . 'images/fan.png'}}" alt="cpu">
@@ -311,7 +311,7 @@
 
                 </div>
 
-                <div id="motherboard-info" class="box card pt-5 lift">
+                <div id="network-info" class="box card pt-5">
 
                     <div class="text-center box-image">
                         <img src="{{asset('storage') . '/' . 'images/ethernet.png'}}" alt="cpu">
@@ -363,6 +363,7 @@
     <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="{{ asset('js/template.js') }}"></script>
+    <script src="{{ asset('js/show.js') }}"></script>
 @endsection
 
 
