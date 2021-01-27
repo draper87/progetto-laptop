@@ -32,15 +32,19 @@ class LaptopController extends Controller
         // restituisco solamente i risultati con i # CoresCPU selezionati
         if ($cpuCores = $request->get('cpu')) {
             if ($request->input('coresChecked') == 1) { // stampo anche i # cores superiori
-                $queryLaptop->selectRaw("*")
-                    ->join('cpus', 'cpus.name', '=', 'laptops.cpu_name')
-                    ->where('cores', '>=', $cpuCores);
-
+                $queryLaptop->whereHas('cpu',function (Builder $builder) use($cpuCores){
+                    $builder->where('cores','>=',$cpuCores);
+                });
+//                $queryLaptop->selectRaw("*")
+//                    ->join('cpus', 'cpus.name', '=', 'laptops.cpu_name')
+//                    ->where('cores', '>=', $cpuCores);
             } else { // stampo solo i # cores selezionati
-                $queryLaptop->selectRaw("*")
-                    ->join('cpus', 'cpus.name', '=', 'laptops.cpu_name')
-                    ->where('cores', '=', $cpuCores);
-
+                $queryLaptop->whereHas('cpu',function (Builder $builder) use($cpuCores){
+                    $builder->where('cores','=',$cpuCores);
+                });
+//                $queryLaptop->selectRaw("*")
+//                    ->join('cpus', 'cpus.name', '=', 'laptops.cpu_name')
+//                    ->where('cores', '=', $cpuCores);
             }
         }
 
@@ -108,6 +112,8 @@ class LaptopController extends Controller
         }
 
         $queryLaptop->with(['Cpu', 'Videocard']);
+
+//        dd($queryLaptop->get());
 
         return $queryLaptop->orderBy('laptops.updated_at', 'desc')->paginate(15);
     }
