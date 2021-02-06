@@ -84,6 +84,11 @@
         }
     }
 }
+// Icon 24x24
+.laptop-icon {
+    width: 24px;
+    height: 24px;
+}
 // pointer
 .question-icon {
     cursor: pointer;
@@ -221,6 +226,8 @@
 .compare-show {
     display: flex;
 }
+// Parte relativa al blog
+
 // Z Index per il logo di Google Recaptcha nella Contact Us
 .grecaptcha-badge {
     z-index: 100;
@@ -5726,7 +5733,7 @@ input[type=button].btn-block {
     font-weight: 400;
     color: #1f2d41;
     text-align: inherit;
-    white-space: nowrap;
+    //white-space: nowrap;
     background-color: transparent;
     border: 0;
 }
@@ -20340,7 +20347,7 @@ body {
     }
 
     .dropdown-lg .dropdown-menu {
-        min-width: 30rem;
+        min-width: 20rem;
         overflow: hidden;
     }
 

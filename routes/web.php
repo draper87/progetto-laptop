@@ -22,6 +22,11 @@ Route::get('/compare', 'LaptopController@compareProducts')->name('compare');
 Route::get('/', 'LaptopController@index')->name('index');
 Route::get('{laptop}', 'LaptopController@show')->name('show');
 
+// Route relative al blog
+Route::prefix('blog')->group(function () {
+    Route::view('/chassis','blog.chassis')->name('chassis');
+});
+
 
 
 // Route relative alle crud (con login come middleware)
