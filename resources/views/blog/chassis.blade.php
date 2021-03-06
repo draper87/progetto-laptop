@@ -49,7 +49,7 @@
                         <div class="single-post-text my-4">
                             <p>The materials and manufacturing techniques of laptops chassis have hit very high levels in the last decade. In fact, if plastic was the most popular material until not so long ago, even in high-end laptops, we now see a steady change away from this material in favour
                                 of more premium materials. This does not mean that plastic is to be considered not suitable to encase our precious hardware components, but rather
-                                there is an actual trend that leads consumers to consider more "noble" materials, and in this certainly Apple has always been the pioneer.</p>
+                                there is an actual trend that leads consumers to prefer more "noble" materials, and in this certainly Apple has always been the pioneer.</p>
                             <p>Not always, however, these premium materials get along with the daily use,  let's look then at the pros and cons of the most popular materials used today:</p>
                             <img class="img-fluid mb-2" src="{{asset('storage') . '/' . 'images/aluminum.webp'}}"  alt="aluminum"/>
                             <h4 class="text-center font-weight-bold">Aluminum unibody</h4>

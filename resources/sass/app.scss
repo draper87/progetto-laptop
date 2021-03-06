@@ -5736,11 +5736,14 @@ input[type=button].btn-block {
     //white-space: nowrap;
     background-color: transparent;
     border: 0;
+    h5 {
+        color: #00ba94;
+    }
 }
-.dropdown-item:hover, .dropdown-item:focus {
-    color: #172130;
+.dropdown-item:hover, .dropdown-item:hover h5 {
+    color: white !important;
     text-decoration: none;
-    background-color: #eff3f9;
+    background-color: #00ba94;
 }
 .dropdown-item.active, .dropdown-item:active {
     color: #fff;
@@ -20342,8 +20345,8 @@ body {
     .dropdown-xl .dropdown-menu .dropdown-item:hover,
     .dropdown-xl .dropdown-menu .dropdown-item:active,
     .dropdown-xl .dropdown-menu .dropdown-item:focus {
-        background-color: inherit;
-        color: #687281 !important;
+        //background-color: inherit;
+        //color: #687281 !important;
     }
 
     .dropdown-lg .dropdown-menu {

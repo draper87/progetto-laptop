@@ -25,6 +25,7 @@ Route::get('{laptop}', 'LaptopController@show')->name('show');
 // Route relative al blog
 Route::prefix('blog')->group(function () {
     Route::view('/chassis','blog.chassis')->name('chassis');
+    Route::view('/temperature','blog.temperature')->name('temperature');
 });
 
 
