@@ -67,8 +67,8 @@
                         <li>Ram</li>
                         <li>Network</li>
                         <li>Connections</li>
-                        <li>Cpu Name</li>
-                        <li>Cpu Score</li>
+                        <li>CPU Name</li>
+                        <li>CPU Score</li>
                         <li>Display size</li>
                         <li>Storage</li>
                         <li>GPU</li>
