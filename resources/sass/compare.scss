@@ -8,7 +8,9 @@
 .compare-image {
     display: flex;
     .compare-image-box {
-        //border-bottom: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 25%;
         img {
             display: block;
