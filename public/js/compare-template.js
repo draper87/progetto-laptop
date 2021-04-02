@@ -51,6 +51,23 @@ $(document).ready(function () {
         $('.compare-specs').children('.compare-specs-box').eq(3).find('li').eq(11).addClass('highlight')
     }
 
+    // Battery life
+    let battery_1 = parseInt($('.compare-specs').children('.compare-specs-box').eq(1).find('li').eq(12).text())
+    let battery_2 = parseInt($('.compare-specs').children('.compare-specs-box').eq(2).find('li').eq(12).text())
+    let battery_3 = parseInt($('.compare-specs').children('.compare-specs-box').eq(3).find('li').eq(12).text())
+
+    if (battery_1 > battery_2 && battery_1 > battery_3) {
+        $('.compare-specs').children('.compare-specs-box').eq(1).find('li').eq(12).addClass('highlight')
+    }
+
+    if (battery_2 > battery_1 && battery_2 > battery_3) {
+        $('.compare-specs').children('.compare-specs-box').eq(2).find('li').eq(12).addClass('highlight')
+    }
+
+    if (battery_3 > battery_1 && battery_3 > battery_2) {
+        $('.compare-specs').children('.compare-specs-box').eq(3).find('li').eq(12).addClass('highlight')
+    }
+
     // Max temp
     let max_temp_1 = parseInt($('.compare-specs').children('.compare-specs-box').eq(1).find('li').eq(14).text())
     let max_temp_2 = parseInt($('.compare-specs').children('.compare-specs-box').eq(2).find('li').eq(14).text())
