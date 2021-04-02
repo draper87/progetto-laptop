@@ -146,6 +146,18 @@ $(document).ready(function () {
             $('.lista').append(html);
         }
         stampaPagination(dataResponse['total'], dataResponse['current_page'], dataResponse['last_page']);
+
+        // mostro i laptop aggiunti alla wishlist dall utente
+        let array_localStorage = localStorage.getItem('wishlist');
+        if (array_localStorage) {
+            array_localStorage = array_localStorage.substring(1);
+            array_localStorage = array_localStorage.substring(0, array_localStorage.length - 1);
+            let array_wishlist = array_localStorage.split(',')
+            for (let i = 0; i < array_wishlist.length; i++) {
+                $('[data-id=' + array_wishlist[i] + ']').removeClass('opaque');
+            }
+        }
+
     }
 
     // logica per la numerazione delle pagine

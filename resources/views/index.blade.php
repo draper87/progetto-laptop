@@ -292,6 +292,9 @@
         <div class="card-flag card-flag-top-left compare-add-button" data-id="@{{id}}">
             <img src="{{asset('storage') . '/' . 'images/plus.svg'}}" alt="add to compare">
         </div>
+        <div class="card-flag card-flag-top-left wishlist-add-button opaque" data-id="@{{id}}">
+            <img src="{{asset('storage') . '/' . 'images/hearts.svg'}}" alt="add to compare">
+        </div>
         <a href="{{route('index')}}/@{{id}}" href="{{route('index')}}/@{{id}}" target="_blank" rel="noopener noreferrer" class="text-decoration-none" id="card-clickable">
             <div class="laptop-img">
                 <img class="card-img-top" src="{{asset('storage')}}/@{{image_path}}" alt="@{{image_path}}">
@@ -336,6 +339,7 @@
     <script src="{{ asset('js/moreFiltersB.js') }}"></script>
     <script src="{{ asset('js/show.js') }}"></script>
     <script src="{{ asset('js/compare.js') }}"></script>
+    <script src="{{ asset('js/wishlist.js') }}"></script>
 @endsection
 
 
