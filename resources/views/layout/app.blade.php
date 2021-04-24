@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{asset('css/nouislider.min.css')}}" >
     <link rel="stylesheet" href="{{asset('css/slider.css')}}"  >
     <link rel="stylesheet" href="{{asset('css/app.css')}}"  />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="icon" type="image/x-icon" href="" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 </head>

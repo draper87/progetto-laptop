@@ -9,7 +9,7 @@
 
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary">
         <div class="page-header-content">
-            <div class="container">
+            <div class="container" id="laptopContainer">
                 <div class="row align-items-center">
                     <div class="col-lg-12">
                         <h1 class="page-header-title text-center font-weight-bold">Find your best laptop</h1>
@@ -135,11 +135,10 @@
                                         <div id="sliderPrice"></div>
                                     </div>
 
-
                                 </div>
                             </div>
 
-                            <div id="filters" class="mt-5 card">
+                            <div v-show='moreFilters' id="filters" class="mt-5 card">
 {{--                                <span>Backlit keyboard</span>--}}
 
                                     <div class="card-header">
@@ -222,7 +221,7 @@
 
                             <div id="form-input" class="text-center mt-4">
 
-                                <img src="{{asset('storage') . '/' . 'images/funnel.png'}}" alt="moreFilters" class="mr-4 mt-5 pointer" id="moreFilters">
+                                <img @click='moreFilters = !moreFilters' src="{{asset('storage') . '/' . 'images/funnel.png'}}" alt="moreFilters" class="mr-4 mt-5 pointer" id="moreFilters">
 
                                 <img src="{{asset('storage') . '/' . 'images/search.png'}}" alt="search" class="mr-2 ml-2 mt-5 pointer" id="bottone">
 {{--                                <input class="mt-5 btn btn-teal btn-marketing rounded-pill lift lift-sm" id="bottone" value="Search">--}}
@@ -340,6 +339,7 @@
     <script src="{{ asset('js/show.js') }}"></script>
     <script src="{{ asset('js/compare.js') }}"></script>
     <script src="{{ asset('js/wishlist.js') }}"></script>
+    <script src="{{ asset('js/vue.js') }}"></script>
 @endsection
 
 

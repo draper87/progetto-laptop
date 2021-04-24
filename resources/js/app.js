@@ -35,11 +35,11 @@ $(document).ready(function () {
         laptopTemperature = null;
     })
 
-    // bottone more filters
-    $('#moreFilters').click(function () {
-        event.preventDefault();
-        $('#filters').toggle();
-    })
+    // // bottone more filters
+    // $('#moreFilters').click(function () {
+    //     event.preventDefault();
+    //     $('#filters').toggle();
+    // })
 
     // metto in una variabile il valore scelto dall utente della select "video_card"
     var videocard;
