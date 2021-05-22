@@ -37,7 +37,7 @@
                                     <div class="mb-3">
                                         <span><img class="tile-img" src="{{asset('storage') . '/' . 'images/cores.svg'}}" alt="cores"></span>
 
-                                        <select class="w-30 js-basic-single-cpu" name="cpu" id="cpu">
+                                        <select class="w-30 js-basic-single-cpu" name="cpu" id="cpu" v-model="cpu">
                                             <option></option>
                                             @php
                                                 foreach ($cpus as $cpu){
@@ -52,7 +52,7 @@
                                             @endforeach
                                         </select>
                                         <span class="better pr-2 pl-2 float-right">
-                                            <input id="cpubettercheckbox" type="checkbox" name="cpubetter" value="1"/>
+                                            <input id="cpubettercheckbox" type="checkbox" name="cpubetter" value="1" v-model="coresChecked"/>
                                         </span>
 
                                     </div>
@@ -60,7 +60,7 @@
                                     <div class="mb-3">
                                         <span><img class="tile-img" src="{{asset('storage') . '/' . 'images/003-ram.svg'}}" alt="ram"></span>
 
-                                        <select class="w-40 js-basic-multiple-ram" name="ram_memory" id="ram_memory">
+                                        <select class="w-40 js-basic-multiple-ram" name="ram_memory" id="ram_memory" v-model="ram">
                                             <option></option>
 
                                             {{--    per evitare duplicati nella select della Ram uso array_unique--}}
@@ -79,7 +79,7 @@
                                             @endforeach
                                         </select>
                                         <span class="better pr-2 pl-2 float-right">
-                                            <input id="rambettercheckbox" type="checkbox" id="ram_better" value="1" />
+                                            <input id="rambettercheckbox" type="checkbox" id="ram_better" value="1" v-model="ramchecked" />
                                         </span>
 
                                     </div>
@@ -88,14 +88,14 @@
 
                                         <span><img class="tile-img" src="{{asset('storage') . '/' . 'images/chassis.svg'}}" alt="chassis"></span>
 
-                                        <select class="w-60 js-basic-single-chassis" name="chassis" id="chassis">
+                                        <select class="w-60 js-basic-single-chassis" name="chassis" id="chassis" v-model="laptopMaterial">
                                             <option></option>
                                             <option value="premium">Premium (Aluminum, Magnesium) </option>
                                             <option value="mixed">Mixed (Aluminum and Plastic) </option>
                                             <option value="plastic">Plastic</option>
                                         </select>
                                         <span class="better pr-2 pl-2 float-right">
-                                            <input id="chassisbettercheckbox" type="checkbox" name="chassisbetter" value="1" />
+                                            <input id="chassisbettercheckbox" type="checkbox" name="chassisbetter" value="1" v-model="chassisChecked" />
                                         </span>
 
                                     </div>
@@ -104,14 +104,14 @@
 
                                         <span><img class="tile-img" src="{{asset('storage') . '/' . 'images/gpu.svg'}}" alt="gpu"></span>
 
-                                        <select class="js-basic-single-videocard" name="video_card" id="videocard">
+                                        <select class="js-basic-single-videocard" name="video_card" id="videocard" v-model="videocard">
                                             <option></option>
                                             @foreach ($videocards as $videocard)
                                                 <option value="{{ $videocard->name }}">{{ $videocard->name }}</option>
                                             @endforeach
                                         </select>
                                         <span class="better pr-2 pl-2 float-right">
-                                            <input id="videocardbettercheckbox" type="checkbox" name="videocardbetter" value="1" />
+                                            <input id="videocardbettercheckbox" type="checkbox" name="videocardbetter" value="1" v-model="videocardChecked" />
                                         </span>
 
                                     </div>
@@ -223,7 +223,7 @@
 
                                 <img @click='moreFilters = !moreFilters' src="{{asset('storage') . '/' . 'images/funnel.png'}}" alt="moreFilters" class="mr-4 mt-5 pointer" id="moreFilters">
 
-                                <img src="{{asset('storage') . '/' . 'images/search.png'}}" alt="search" class="mr-2 ml-2 mt-5 pointer" id="bottone">
+                                <img src="{{asset('storage') . '/' . 'images/search.png'}}" alt="search" class="mr-2 ml-2 mt-5 pointer" id="bottone" @click="chiamaLaptops">
 {{--                                <input class="mt-5 btn btn-teal btn-marketing rounded-pill lift lift-sm" id="bottone" value="Search">--}}
 
                                 <img src="{{asset('storage') . '/' . 'images/reset.png'}}" alt="reset" class="ml-4 mt-5 pointer" id="reset">
@@ -325,6 +325,8 @@
 </script>
 
 @section('scripts')
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
     <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
@@ -339,7 +341,6 @@
     <script src="{{ asset('js/show.js') }}"></script>
     <script src="{{ asset('js/compare.js') }}"></script>
     <script src="{{ asset('js/wishlist.js') }}"></script>
-    <script src="{{ asset('js/vue.js') }}"></script>
 @endsection
 
 

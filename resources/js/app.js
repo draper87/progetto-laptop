@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     // chiamata Ajax quando premo il tasto Search
     $('#bottone').click(function () {
-        chiamaLaptops();
+        // chiamaLaptops();
         // eseguo scroll "ritardato", in modo che risulti piu fluido
         setTimeout(function () {
             $('html, body').animate({
@@ -96,37 +96,37 @@ $(document).ready(function () {
 
 
     // funzione che fa chiamata Ajax all mia API su laravel
-    function chiamaLaptops(page) {
-
-        $.ajax({
-            url: '/api/laptops',
-            method: 'GET',
-            data: {
-                video_card: videocard,
-                cpu: cpu,
-                ram: ram,
-                ramchecked: ramchecked,
-                laptopMaterial: laptopMaterial,
-                coresChecked: coresChecked,
-                videocardChecked: videocardChecked,
-                chassisChecked: chassisChecked,
-                display: sliderDisplay.noUiSlider.get(),
-                price: sliderPrice.noUiSlider.get(),
-                mySliderWeight: sliderWeight.noUiSlider.get(),
-                laptopTemperature: laptopTemperature,
-                brand: brand,
-                page: page,
-            },
-            success: function (dataResponse) {
-                // sessionStorage.setItem('url', this.url);
-                numeroPagina(dataResponse["current_page"], dataResponse["last_page"]);
-                stampaLaptops(dataResponse);
-            },
-            error: function () {
-                alert('Server is not working');
-            }
-        })
-    }
+    // function chiamaLaptops(page) {
+    //
+    //     $.ajax({
+    //         url: '/api/laptops',
+    //         method: 'GET',
+    //         data: {
+    //             video_card: videocard,
+    //             cpu: cpu,
+    //             ram: ram,
+    //             ramchecked: ramchecked,
+    //             laptopMaterial: laptopMaterial,
+    //             coresChecked: coresChecked,
+    //             videocardChecked: videocardChecked,
+    //             chassisChecked: chassisChecked,
+    //             display: sliderDisplay.noUiSlider.get(),
+    //             price: sliderPrice.noUiSlider.get(),
+    //             mySliderWeight: sliderWeight.noUiSlider.get(),
+    //             laptopTemperature: laptopTemperature,
+    //             brand: brand,
+    //             page: page,
+    //         },
+    //         success: function (dataResponse) {
+    //             // sessionStorage.setItem('url', this.url);
+    //             numeroPagina(dataResponse["current_page"], dataResponse["last_page"]);
+    //             stampaLaptops(dataResponse);
+    //         },
+    //         error: function () {
+    //             alert('Server is not working');
+    //         }
+    //     })
+    // }
 
 
     // funzione che usa handlebars per stampare i risultati ottenuti dalla chiamata Ajax
@@ -213,86 +213,86 @@ $(document).ready(function () {
         $('#pagina').append(html);
     }
 
-    // SELECT
+    // SELECT da eliminare una volta terminato Ajax con Vue.js
     // select per le videocard
-    $('.js-basic-single-videocard').select2({
-        placeholder: "Select videocard",
-        allowClear: true
-    });
+    // $('.js-basic-single-videocard').select2({
+    //     placeholder: "Select videocard",
+    //     allowClear: true
+    // });
 
     // select per CPU Cores
-    $('.js-basic-single-cpu').select2({
-        placeholder: "CPU # Cores",
-        allowClear: true
-    });
+    // $('.js-basic-single-cpu').select2({
+    //     placeholder: "CPU # Cores",
+    //     allowClear: true
+    // });
 
     // select per memoria ram
-    $('.js-basic-multiple-ram').select2({
-        placeholder: "Select ram amount",
-        allowClear: true
-    });
+    // $('.js-basic-multiple-ram').select2({
+    //     placeholder: "Select ram amount",
+    //     allowClear: true
+    // });
 
     // select per lo chassis
-    $('.js-basic-single-chassis').select2({
-        placeholder: "Select chassis material",
-        allowClear: true
-    });
+    // $('.js-basic-single-chassis').select2({
+    //     placeholder: "Select chassis material",
+    //     allowClear: true
+    // });
 
     // select per il brand
-    $('.js-basic-single-brand').select2({
-        placeholder: "Select brand",
-        allowClear: true
-    });
+    // $('.js-basic-single-brand').select2({
+    //     placeholder: "Select brand",
+    //     allowClear: true
+    // });
 
     // select per il brand
-    $('.js-basic-single-keyboard').select2({
-        placeholder: "Select keyboard's backlit",
-        allowClear: true
-    });
+    // $('.js-basic-single-keyboard').select2({
+    //     placeholder: "Select keyboard's backlit",
+    //     allowClear: true
+    // });
 
     // Switcher (tasti on-off relativi alle select)
 
-    $('#rambettercheckbox').lc_switch('Yes', 'No');
-    $('#rambettercheckbox').lcs_on();
-    var ramchecked = 1;
-    $('body').delegate('#rambettercheckbox', 'lcs-on', function () {
-        ramchecked = 1;
-        // console.log(ramchecked);
-    });
-    $('body').delegate('#rambettercheckbox', 'lcs-off', function () {
-        ramchecked = 0;
-        // console.log(ramchecked);
-    });
+    // $('#rambettercheckbox').lc_switch('Yes', 'No');
+    // $('#rambettercheckbox').lcs_on();
+    // var ramchecked = 1;
+    // $('body').delegate('#rambettercheckbox', 'lcs-on', function () {
+    //     ramchecked = 1;
+    //     // console.log(ramchecked);
+    // });
+    // $('body').delegate('#rambettercheckbox', 'lcs-off', function () {
+    //     ramchecked = 0;
+    //     // console.log(ramchecked);
+    // });
 
-    $('#videocardbettercheckbox').lc_switch('Yes', 'No');
-    $('#videocardbettercheckbox').lcs_on();
-    var videocardChecked = 1;
-    $('body').delegate('#videocardbettercheckbox', 'lcs-on', function () {
-        videocardChecked = 1;
-    });
-    $('body').delegate('#videocardbettercheckbox', 'lcs-off', function () {
-        videocardChecked = 0;
-    });
+    // $('#videocardbettercheckbox').lc_switch('Yes', 'No');
+    // $('#videocardbettercheckbox').lcs_on();
+    // var videocardChecked = 1;
+    // $('body').delegate('#videocardbettercheckbox', 'lcs-on', function () {
+    //     videocardChecked = 1;
+    // });
+    // $('body').delegate('#videocardbettercheckbox', 'lcs-off', function () {
+    //     videocardChecked = 0;
+    // });
 
-    $('#cpubettercheckbox').lc_switch('Yes', 'No');
-    $('#cpubettercheckbox').lcs_on();
-    var coresChecked = 1;
-    $('body').delegate('#cpubettercheckbox', 'lcs-on', function () {
-        coresChecked = 1;
-    });
-    $('body').delegate('#cpubettercheckbox', 'lcs-off', function () {
-        coresChecked = 0;
-    });
+    // $('#cpubettercheckbox').lc_switch('Yes', 'No');
+    // $('#cpubettercheckbox').lcs_on();
+    // var coresChecked = 1;
+    // $('body').delegate('#cpubettercheckbox', 'lcs-on', function () {
+    //     coresChecked = 1;
+    // });
+    // $('body').delegate('#cpubettercheckbox', 'lcs-off', function () {
+    //     coresChecked = 0;
+    // });
 
-    $('#chassisbettercheckbox').lc_switch('Yes', 'No');
-    $('#chassisbettercheckbox').lcs_on();
-    var chassisChecked = 1;
-    $('body').delegate('#chassisbettercheckbox', 'lcs-on', function () {
-        chassisChecked = 1;
-    });
-    $('body').delegate('#chassisbettercheckbox', 'lcs-off', function () {
-        chassisChecked = 0;
-    });
+    // $('#chassisbettercheckbox').lc_switch('Yes', 'No');
+    // $('#chassisbettercheckbox').lcs_on();
+    // var chassisChecked = 1;
+    // $('body').delegate('#chassisbettercheckbox', 'lcs-on', function () {
+    //     chassisChecked = 1;
+    // });
+    // $('body').delegate('#chassisbettercheckbox', 'lcs-off', function () {
+    //     chassisChecked = 0;
+    // });
 
     // RANGE SLIDER
     // range slider per il display size
@@ -353,10 +353,42 @@ $(document).ready(function () {
             suffix: '$'
         })
     });
-
-
-
-
 })
+
+// Parte relativa a Vue.js
+const laptopApp = Vue.createApp({
+    data() {
+        return {
+            laptopApi: null,
+            moreFilters: false,
+            videocard: null,
+            cpu: null,
+            ram: null,
+            ramchecked: false,
+            laptopMaterial: null,
+            coresChecked: false,
+            videocardChecked: false,
+            chassisChecked: false
+        }},
+    methods: {
+        chiamaLaptops() {
+            axios.get('/api/laptops', {
+                params:{
+                    video_card: this.videocard,
+                    cpu: this.cpu,
+                    ram: this.ram,
+                    ramchecked: this.ramchecked,
+                    laptopMaterial: this.laptopMaterial,
+                    coresChecked: this.coresChecked,
+                    videocardChecked: this.videocardChecked,
+                    chassisChecked: this.chassisChecked
+                }})
+                .then(response => {
+                    console.log(response.data)
+                })
+        }
+    }
+}).mount('#laptopContainer')
+
 
 

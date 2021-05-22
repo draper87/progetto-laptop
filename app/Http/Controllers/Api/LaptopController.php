@@ -17,7 +17,7 @@ class LaptopController extends Controller
 
         // restituisco solamente i risultati con la scheda video selezionata
         if ($videoCardName = $request->get('video_card')){
-            if ($request->input('videocardChecked') == 1) { // stampo anche le videocards con performance migliori
+            if ($request->input('videocardChecked') == true) { // stampo anche le videocards con performance migliori
                 $query_video_card = Videocard::query()->where('name','=',$videoCardName)->get();
                 $query_video_card_element = $query_video_card->get('0');
                 $query_video_card_score = $query_video_card_element['score'];
@@ -31,7 +31,7 @@ class LaptopController extends Controller
 
         // restituisco solamente i risultati con i # CoresCPU selezionati
         if ($cpuCores = $request->get('cpu')) {
-            if ($request->input('coresChecked') == 1) { // stampo anche i # cores superiori
+            if ($request->input('coresChecked') == true) { // stampo anche i # cores superiori
                 $queryLaptop->whereHas('cpu',function (Builder $builder) use($cpuCores){
                     $builder->where('cores','>=',$cpuCores);
                 });
@@ -50,10 +50,10 @@ class LaptopController extends Controller
 
         // restituisco solamente i risultati con la ram selezionata
         if ($ram_memory = $request->get('ram')) {
-            if ($request->input('ramchecked') == 1) { // stampo anche i quantitativi di ram maggiori
+            if ($request->input('ramchecked') == true) { // stampo anche i quantitativi di ram maggiori
                 $queryLaptop->where('ram_memory', '>=' , $ram_memory);
             }
-            elseif ($request->input('ramchecked') == 0) { // stampo solo il quantitativo di ram selezionato
+            elseif ($request->input('ramchecked') == false) { // stampo solo il quantitativo di ram selezionato
                 $queryLaptop->where('ram_memory', $ram_memory);
             }
         }
